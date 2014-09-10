@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}HighFive{% endblock %}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        {% block stylesheets %}{% endblock %}
+        {% block head_javascripts %}
+            <!--[if lt IE 9]>
+                <script type="text/javascript" src="{{ asset('bundles/frontend/vendor/js/html5shiv.js') }}"></script>
+            <![endif]-->
+            {{ nelmio_js_error_logger() }}
+            <script type="text/javascript">
+                var _kmq = _kmq || [];
+                {# Uncomment this piece of code if you need to check the tracking
+                _kmq = {
+                    push: function (data) {
+                        console.log(data);
+                    }
+                };
+                #}
+                {% if kissmetrics_api_key is not null %}
+                    (function () {
+                        var _kmk = '{{ kissmetrics_api_key|e('js') }}';
+                        function _kms(u){
+                            setTimeout(function(){
+                                var d = document, f = d.getElementsByTagName('script')[0],
+                                s = d.createElement('script');
+                                s.type = 'text/javascript'; s.async = true; s.src = u;
+                                f.parentNode.insertBefore(s, f);
+                            }, 1);
+                        }
+                        _kms('//i.kissmetrics.com/i.js');
+                        _kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
+                    })();
+                {% endif %}
+            </script>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body {% if app.user %}data-user-id="{{ app.user.id }}"{% endif %}>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

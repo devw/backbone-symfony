@@ -1,0 +1,82 @@
+// ------------------------------
+// App Layout
+// ------------------------------
+
+body {
+    background: url("@{imgBodyBackground}") repeat scroll 0 0 @bodyBackgroundColor;
+    padding-top: 60px;
+}
+
+#header {
+    .box-shadow(@showcaseHeaderBoxShadow);
+
+    > .navbar-inner {
+        padding: 10px 0 5px 0;
+
+        .navbar-btn-signup {
+            .buttonBackground(@buttonImportantGradientStartColor, @buttonImportantGradientEndColor, @buttonImportantColor, @buttonImportantTextShadow);
+            padding: 5px 10px;
+        }
+    }
+}
+
+#container {
+    .box-shadow(@showcaseContainerShadow);
+    border-width: 0 1px;
+    border-style: solid;
+    border-color: @borderColor;
+    position: relative;
+
+    .layout-color-separator {
+        background: @separatorColor;
+        border: none;
+        height: 7px;
+        margin: 0;
+    }
+
+    .layout-actions-right {
+        text-align: right;
+    }
+
+    > .header {
+        background: url("@{imgBannerBackground}") no-repeat center center;
+        .background-size(cover);
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{imgBannerBackground}', sizingMethod='scale');
+        -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{imgBannerBackground}',sizingMethod='scale')";
+        height: 340px;
+        text-align: center;
+        text-shadow: @contentShadowColor;
+        padding: (@normalFontSize * 2) 0;
+        position: relative;
+
+        > .header-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+
+            > .title {
+                font-size: @hugeFontSize;
+                line-height: @hugeLineHeight;
+                margin: 130px 10px 20px;
+            }
+
+            > .placeholder {
+                margin: 0 10px;
+            }
+        }
+    }
+
+    > .subcontent {
+        padding-top: 135px;
+        position: relative;
+    }
+
+    > .footer {
+        background-color: @footerBackgroundColor;
+        border-top: 7px solid @separatorColor;
+        position: relative;
+    }
+}

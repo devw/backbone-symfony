@@ -1,0 +1,15 @@
+showcase:
+    resource: showcase.yml
+
+invitation:
+    resource: invitation.yml
+    prefix: /invite
+
+feedback:
+    resource: feedback.yml
+
+api:
+    resource: api.yml
+    type: rest
+    prefix: /api
+    requirements: { _format: "json" }

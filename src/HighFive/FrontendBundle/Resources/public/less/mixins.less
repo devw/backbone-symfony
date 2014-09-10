@@ -1,0 +1,61 @@
+// ------------------------------
+// Mixins Stylesheet
+// ------------------------------
+
+.showed {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.avatar (@radius: @avatarBorderRadius, @color: @avatarMixinDefaultColor) {
+    .border-radius(@radius);
+    border: 1px solid @color;
+}
+
+// Triangles
+// ------------------------------
+.noTriangleStyle () {
+    border: none;
+    content: "";
+}
+
+.triangle (left, @borderSize: 10px, @borderStyle: solid, @borderColor, @vertical: 0, @horizontal: 0) {
+    &:before {
+        border-left: @borderSize @borderStyle transparent;
+        border-right: @borderSize @borderStyle @borderColor;
+        left: @horizontal;
+    }
+
+    &:after {
+        .noTriangleStyle();
+    }
+}
+
+.triangle (right, @borderSize: 10px, @borderStyle: solid, @borderColor, @vertical: 0, @horizontal: 0) {
+    &:before {
+        .noTriangleStyle();
+    }
+
+    &:after {
+        border-left: @borderSize @borderStyle @borderColor;
+        border-right: @borderSize @borderStyle transparent;
+        right: @horizontal;
+    }
+}
+
+.triangle(@_, @borderSize: 10px, @borderStyle: solid, @borderColor, @vertical: 0, @horizontal: 0) {
+    &:after, &:before {
+        border-top: @borderSize @borderStyle transparent;
+        border-bottom: @borderSize @borderStyle transparent;
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: @vertical;
+        width: 0;
+    }
+}

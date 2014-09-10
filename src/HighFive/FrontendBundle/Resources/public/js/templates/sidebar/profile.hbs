@@ -1,0 +1,24 @@
+<figure class="widget-profile-avatar avatar">
+    <div class="span3">
+        <img src="{{ avatar_url }}" alt="" class="avatar-picture" />
+    </div>
+    <div class="span9">
+        <div class="avatar-caption">
+            <p class="avatar-caption-title">{{ first_name }} {{ last_name }}</p>
+        </div>
+    </div>
+</figure>
+<ul class="widget-points-status">
+    <li>
+        <strong>{{ remaining_points }}</strong>
+        {{ transChoice "profile.message.points_to_give" remaining_points }}
+    </li>
+    <li>
+        <strong>{{ given_points }}</strong>
+        {{ transChoice "profile.message.given_points" given_points }}
+    </li>
+    <li>
+        <strong>{{ received_points }}</strong>
+        {{ transChoice "profile.message.received_points" received_points }}
+    </li>
+</ul>

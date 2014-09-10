@@ -1,0 +1,5 @@
+<img src="{{ user.avatar_url }}" alt="" class="list-board-user-avatar" />
+<span class="list-board-data{{#if is_own_ranking}} is-active-user{{/if}}" title="{{ user.first_name }} {{ user.last_name }}">
+    {{ user.first_name }} {{ user.last_name }}
+</span>
+<span class="list-board-user-points">{{ user.received_points }}</span>

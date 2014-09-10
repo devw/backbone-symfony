@@ -1,0 +1,265 @@
+// ------------------------------
+// Form Module
+// ------------------------------
+
+
+// Core
+// -------------------------
+.form {
+    margin-bottom: 0;
+
+    textarea {
+        .box-sizing(border-box);
+        margin-bottom: 0;
+        min-height: 45px;
+        resize: vertical;
+        width: 100%;
+    }
+
+    // - Actions
+    .form-action {
+        text-align: center;
+
+        &.right {
+            text-align: right;
+            padding-right: 5px;
+        }
+    }
+
+    // - Help
+    .form-help {
+        color: @informationContentColor;
+        font-size: @smallFontSize;
+        font-style: italic;
+        line-height: @smallLineHeight;
+    }
+
+    // - Errors
+    .form-error {
+        .border-radius(5px);
+        margin: 5px 0 15px;
+        padding: 10px;
+        background-color: @errorBackgroundColor;
+        color: @errorContentColor;
+        .control-group.error;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        input[type=text], input[type=password], input[type=email] {
+            width: 358px;
+        }
+    }
+}
+
+
+// SignUp inline Form
+// -------------------------
+.form.form-signup-inline {
+    .form-inline;
+    .gradientBar(@formSignupBackgroundStartColor, @formSignupBackgroundEndColor, @formSignupContentColor, @formSignupTextShadow);
+    .box-sizing(border-box);
+    border: 1px solid @borderColor;
+    left: -30px;
+    position: absolute;
+    right: -30px;
+    top: 0;
+    padding: (@normalFontSize * 2) (@normalFontSize * 3);
+    z-index: 10;
+
+    &:before, &:after {
+        border-top: 15px solid transparent;
+        border-bottom: 0 solid transparent;
+        content: "";
+        position: absolute;
+        top: -15px;
+    }
+
+    &:before {
+        border-left: 0 solid transparent;
+        border-right: @ribbonTriangleSize solid @ribbonTriangleColor;
+        left: -1px;
+    }
+
+    &:after {
+        border-left: @ribbonTriangleSize solid @ribbonTriangleColor;
+        border-right: 0 solid transparent;
+        right: -1px;
+    }
+
+    > .form-signup-inline-content {
+        display: inline-block;
+        .ie7-inline-block();
+
+        > .control-group {
+            display: inline-block;
+            .ie7-inline-block();
+            margin: 0 9px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            > .control-label {
+                display: none;
+            }
+
+            > .controls {
+                input {
+                    padding: 10px 20px 10px 10px;
+                    width: 210px;
+                }
+            }
+        }
+    }
+
+    > .btn-form-signup-inline-submit {
+        .btn-large;
+        .buttonBackground(@buttonImportantGradientStartColor, @buttonImportantGradientEndColor, @buttonImportantColor, @buttonImportantTextShadow);
+        font-weight: bold;
+        padding: 10px 15px;
+    }
+}
+
+
+// User Administration Form
+// -------------------------
+.form.form-user-administration {
+    margin: 0 auto;
+    width: 500px;
+
+    > .form-user-administration-content {
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+        }
+
+        .form-user-administration-skip-step {
+            display: inline-block;
+            .ie7-inline-block();
+            font-size: @smallFontSize;
+            line-height: @smallLineHeight;
+        }
+    }
+
+    > .form-user-administration-actions {
+        padding: @normalFontSize;
+        text-align: center;
+
+        > .form-user-administration-actions-submit {
+            .buttonBackground(@buttonImportantGradientStartColor, @buttonImportantGradientEndColor, @buttonImportantColor, @buttonImportantTextShadow);
+            .btn-large;
+            display: block;
+            font-size: @highFontSize;
+            line-height: @highLineHeight;
+            margin: 0 auto 10px;
+            padding: @normalFontSize;
+            width: 300px;
+        }
+    }
+}
+
+
+// Modal Form
+// -------------------------
+.form.form-modal {
+
+    p {
+        font-size: @normalFontSize;
+        line-height: @normalLineHeight;
+        margin-bottom: @formModalContentMargin;
+    }
+
+    input, select, textarea {
+        .box-sizing(content-box);
+        width: 300px;
+    }
+}
+
+
+// Invitation Form
+// -------------------------
+.form.form-invitation {
+
+    input, select, textarea {
+        .box-sizing(content-box);
+        padding: 4px 0;
+        text-indent: 0.6em;
+        width: 100%;
+    }
+}
+
+
+// Feedback Form
+// -------------------------
+.form.form-feedback {
+
+    .form-feedback-textarea {
+        padding: 5px;
+    }
+
+    .form-feedback-actions {
+        display: none;
+        text-align: right;
+    }
+}
+
+
+// Announcement Form
+// -------------------------
+.form.form-announcement {
+    padding: @normalFontSize;
+
+    > .form-announcement-content {
+        > .form-announcement-textarea {
+            .border-radius(0);
+        }
+    }
+
+    > .form-announcement-actions {
+        background: @formActionsBackgroundColor;
+        padding: 7px;
+        text-align: right;
+    }
+}
+
+// Comment Form
+// -------------------------
+.form.form-comment {
+    background: @formCommentBackgroundColor;
+    padding: 7px;
+
+    > .form-comment-content {
+        .form-comment-textarea {
+            .border-radius(0);
+            margin-bottom: 0;
+        }
+    }
+
+    > .form-comment-points {
+        > .control-label {
+            text-align: left;
+        }
+
+        .form-comment-range {
+            width: 100%;
+        }
+    }
+
+    > .form-comment-actions {
+        margin-top: 10px;
+        text-align: right;
+
+        > .form-comment-actions-points {
+            font-size: @smallFontSize;
+            line-height: @smallLineHeight;
+        }
+    }
+}

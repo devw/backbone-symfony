@@ -1,0 +1,43 @@
+{% extends 'FrontendBundle::index.html.twig' %}
+
+{% block title %}HighFive specs{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/frontend/vendor/jasmine-1.2.0/jasmine.css') }}">
+{% endblock %}
+
+{% block body %}{% endblock %}
+
+{% block requirejs_additional_config %}
+    var jasmineDir = '../vendor/jasmine-1.2.0/';
+
+    require.config({
+        paths: {
+            jasmine: jasmineDir + 'jasmine',
+            jasmineHtml: jasmineDir + 'jasmine-html',
+            jasmineJquery: jasmineDir + 'jasmine-jquery-1.3.1',
+            sinon: vendorDir + 'sinon-1.4.2'
+        },
+        shim: {
+            jasmineHtml: {
+                deps: ['jasmine']
+            },
+            jasmine: {
+                exports: 'jasmine'
+            },
+            jasmineJquery: {
+                deps: ['jasmine', 'jquery']
+            }
+        }
+    });
+{% endblock%}
+
+{% block requirejs_initialize %}
+    {# stop the spinner added by the parent template #}
+    spinner.stop();
+    require([
+        '../spec/app'
+    ], function (app) {
+        app.initialize();
+    });
+{% endblock %}

@@ -1,0 +1,268 @@
+layout:
+    tooltip:
+        home: Home
+    placeholder:
+        search: Search
+    messages:
+        loading: Loading...
+    actions:
+        contact_support: Contact support
+
+showcase:
+    title:
+        main: Motivate your Team, Everyday.
+        placeholder: HighFive makes it Easy and Fun to Recognize the Good Work in your Team.
+        form_placeholder: Sign-up for free. No credit card required. Takes 30 sec.
+    message:
+        presentation: HighFive is an Online Motivation Platform that makes it easy to boost Engagement in your team by promoting Achievements and Recognition.
+        system: We use powerful Gamification Mechanics to Engage your people and Increase Motivation in the Workplace.
+        title:
+            team: What's HighFive?
+            fun: Simple and Fun
+            engagement: Game Mechanics
+        presentation:
+            team: |
+                HighFive is an Online Motivation Platform that makes it easy to boost Engagement in your team by
+                promoting Achievements and Recognition.
+            fun: |
+                We believe life is too short to get bored at work. And we believe Motivation should be something fun.
+                So we make HighFive Simple and Fun.
+            engagement: |
+                We use powerful Gamification Mechanics to Engage your people and Increase Motivation in the Workplace.
+    action:
+        signup: Sign-up
+        sign_me_up: Sign-up Now
+        go_to_app: Go to HighFive
+
+password_recovery:
+    title: Password Recovery
+    label:
+        email: E-mail
+    info:
+        fill_in_email: Enter your e-mail address, and we'll send you instructions on how to reset your password.
+        fill_in_new_password: Enter a new password for your account below.
+        email_sent: |
+            An email with instructions on how to reset your password has been sent to **%email%**.
+
+            If you do not receive it within a few minutes, check your spam folder.
+    action:
+        recover: Recover password
+        update: Update password
+
+registration:
+    title:
+        register: Register
+        welcome: Welcome to HighFive!
+        almost_done: You're almost done!
+    info:
+        have_account: Already have an account?
+        confirmation_successful: You have successfully confirmed your account and we are glad to have you on board!
+        email_verification: |
+            An **email** has been sent to **%email%** to verify your email address.
+
+            Please check your inbox and click on the link in the email we just sent you.
+
+            You will then be able to start using HighFive!
+        invitation: |
+            **%user_name%** invited you in the %organization_name% organization.
+
+            Join your colleagues filling the form below.
+    label:
+        full_name: Full name
+        organization: Organization
+    placeholder:
+        organization_name: Company, Non-Profit, Team, or any kind of Organization
+
+security:
+    title:
+        log_in: Log In
+    label:
+        remember_me: Please don't forget me
+        email: E-mail
+        password: Password
+    placeholder:
+        enter_email: Type in your e-mail... Slowly...
+        enter_password: Check the Post-It on your computer screen...
+    action:
+        log_in: Log In
+        log_out: Log Out
+        register: Sign-up Now!
+    info:
+        not_register: Don't have an account yet?
+        forgot_password: Forgot password?
+
+invitation:
+    title:
+        invite: Invite your coworkers
+        register: Register
+    info:
+        invite_coworkers: Invite your coworkers
+        explanation: You can now invite your coworkers to join you on HighFive.
+        help: Note: You can add several people by adding an email per line.
+        invites_sent: An invitation has been sent to the following emails:
+        invites_resent: An invitation has been resent to the following emails:
+        emails_registered: The following emails are already registered in the application:
+        emails_invited: The following emails are already invited:
+        no_coworkers: |
+            Aww, there is currently noone in your organization, and self-highfiving is pretty useless!
+            Use the form below to invite people so that you can HighFive them.
+    action:
+        invite: Invite
+        cancel: Cancel
+        submit: Submit
+        skip_step: Skip this step
+        go_to_app: Go to HighFive
+        add_row: Add another email
+    tour:
+        title: Invite Somone
+        content: You can invite your coworkers to join you on HighFive.
+    placeholder:
+        email: Enter the email of a coworker
+
+recognition:
+    title:
+       recognize: HighFive Someone
+    label:
+        name: Who?
+        reason: Why?
+        points: How Much?
+    info:
+        no_user_found: No user found
+    placeholder:
+        enter_name: Start typing the name of someone you want to HighFive...
+        enter_reason1: |
+            I wanted to say thank you for fixing the coffee machine yesterday. Thanks to you I had my coffee cup this
+            morning and it made me feel so good that I worked twice as hard to finish the project. We should be able to
+            launch this spaceship to Mars tomorrow.
+        enter_reason2: |
+            Dear Chuck Norris,
+
+            Thank you for saving the World once again yesterday. I appreciate that you are always here to help us out
+            of very critical situations and to distribute a bunch of kicks to bad guys. Thanks to you the World is a
+            much better place.
+        enter_reason3: |
+            I can no other answer make, but, thanks, and thanks. Your contribution to Project Superman has been
+            invaluable. I especially appreciate your magic powers which made us finish the project in 2 weeks instead of
+            3 months.
+        enter_reason4: |
+            Just wanted to thank you for being on time every morning. It seems obvious but you are here on time every
+            single day and it makes me feel good to know that we can always start our morning meeting right on time.
+    action:
+        recognize: HighFive
+        recognize_someone: HighFive
+    tour:
+        recognize-title: HighFive Someone
+        recognize-content: You can start engaging your team and recognize the good work.
+    points:
+        balance: "%points% pt|%points% pts"
+
+mail:
+    invitation:
+        title: Invitation
+        subject: %name% invited you on HighFive
+        content_txt: |
+            Hello %first_name%,
+
+            %user_name% invited you on HighFive in the %organization_name% organization.
+        content_html: |
+            Hello %first_name%,
+
+            **%user_name%** invited you on HighFive in the %organization_name% organization.
+        join: Use this url to join:
+    notification:
+        recognition:
+            title: %name% gave you some points
+            subject: %name% gave you some points
+            content_txt: %name% just gave you %points% points. Take some time to thank him.
+            content_html: "**%name%** just gave you **%points%** points on HighFive. Take some time to thank him."
+        reply:
+            subject: %name% replied to your message
+            content_txt: %name% just replied to a discussion involving you.
+            content_html: "**%name%** just replied to a discussion involving you."
+    presentation:
+        subject: Welcome to HighFive! Get started in minutes.
+        introduction: |
+            Hi %first_name%,
+
+            Thank you for signing-up to HighFive. **It takes just two simple steps** to get started with HighFive. Then
+            you'll be able to start engaging your team and recognize and showcase the good work.
+        whats_next: What's next?
+        invite_people:
+            title: 1. Invite your team
+            content: |
+                Self HighFiving is useless! You need to invite at least some people from your team to be able to use HighFive properly and get some value from it.
+        recognize_people:
+            title: 2. Send some HighFives
+            content: |
+                After you've invited people and they have joined your organization, you can send them HighFives. HighFives are small positive recognition messages sent to appreciate and promote good work or good behaviors which impact your company positively.
+        why_highfive:
+            title: How to HighFive properly?
+            content: |
+                At HighFive, we think HighFives must be **sincere** and **specific**. Don't tell people that they are great. They probably won't believe you.
+                Tell them that **YOU** want to thank them for a **VERY SPECIFIC** reason.
+
+                There are plenty of excellent reasons to send a HighFive: a sales rep has exceeded his objectives, a developer has fixed an annoying bug, a newcomer has joined the organization, a guy in your team is there on time every morning...
+
+                Don't forget to appreciate exceptional behaviors as well as unexceptional but good behaviors. Also describe the consequences of these behaviors for the company.
+
+                **Have questions or need help getting started? Just reply to this email and we're happy to help!**
+
+                Thanks,
+        highfive_team: The HighFive Team
+    resetting:
+        title: Hello **%username%**,
+        content_html: "To reset your password, please visit [%confirmationUrl%](%confirmationUrl%)."
+    registration:
+        title: Hello **%username%**,
+        content_html: "To finish activating your account, please visit [%confirmationUrl%](%confirmationUrl%)."
+    links:
+        home: Home
+        go_to_app: Go to HighFive
+
+profile:
+    message:
+        points_to_give: "point to give|points to give"
+        given_points: "point given|points given"
+        received_points: "point received|points received"
+
+feedback:
+    title:
+        feedback: Feedback
+    placeholder:
+        enter_comment: How can we make HighFive better for you?
+    message:
+        sent: Thank you for your feedback, we will answer it faster than light.
+    action:
+        submit: Submit
+
+wall:
+    placeholder:
+        comment: Comment
+        no_comment: You don't have any message yet.
+        enter_comment: Your HighFive...
+        enter_announcement: Have achieved something? Brag about it...
+
+    action:
+        add_points: Add points
+        comment: Comment
+        cancel_comment: Cancel
+        submit_comment: HighFive
+        submit_announcement: Post Update
+
+message:
+    actions:
+        reply: Reply
+        recognize: HighFive
+    info:
+        registration: %first_name% %last_name% just joined HighFive. Take a moment to welcome %first_name%.
+        to_you: You
+
+notification:
+    message:
+        replied: %first_name% %last_name% replied to a discussion involving you
+        received_points: You received %points% points from %first_name% %last_name%
+        no_notifications: No notifications
+
+board:
+    label:
+        monthly: Monthly ranking

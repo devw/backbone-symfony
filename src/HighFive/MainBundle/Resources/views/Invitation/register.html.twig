@@ -1,0 +1,44 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block content %}
+<div class="block block-showcase">
+    <h2 class="layout-title">{{ 'invitation.title.register'|trans }}</h2>
+</div>
+
+<hr class="layout-color-separator">
+
+<div class="block block-showcase">
+    <form action="{{ path('invitation_register', {'token': token}) }}" {{ form_enctype(form) }} method="POST" class="form form-user-administration">
+        <div class="form-user-administration-content">
+            {{ 'registration.info.invitation'|trans({
+                '%user_name%': (invitation.referrer.firstName ~ ' ' ~ invitation.referrer.lastName)|trim,
+                '%organization_name%': invitation.organization.name
+            })|markdown }}
+            <hr>
+            {{ form_widget(form) }}
+        </div>
+        <div class="form-user-administration-actions">
+            <button class="btn form-user-administration-actions-submit" type="submit" data-tid="loading-button" data-loading-text="{{ 'layout.messages.loading'|trans }}" autocomplete="off">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</button>
+        </div>
+    </form>
+    <ul class="list list-grid">
+        <li class="row-fluid list-grid-row">
+            <article class="span4 list-grid-cell presentation">
+                <span class="hf-sprite-teamwork"></span>
+                <h4 class="presentation-title">{{ 'showcase.message.title.team'|trans }}</h4>
+                <p class="presentation-content">{{ 'showcase.message.presentation.team'|trans }}</p>
+            </article>
+            <article class="span4 list-grid-cell presentation">
+                <span class="hf-sprite-fun"></span>
+                <h4 class="presentation-title">{{ 'showcase.message.title.fun'|trans }}</h4>
+                <p class="presentation-content">{{ 'showcase.message.presentation.fun'|trans }}</p>
+            </article>
+            <article class="span4 list-grid-cell presentation">
+                <span class="hf-sprite-engagement"></span>
+                <h4 class="presentation-title">{{ 'showcase.message.title.engagement'|trans }}</h4>
+                <p class="presentation-content">{{ 'showcase.message.presentation.engagement'|trans }}</p>
+            </article>
+        </li>
+    </ul>
+</div>
+{% endblock %}

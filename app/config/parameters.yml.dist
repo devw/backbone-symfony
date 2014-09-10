@@ -1,0 +1,18 @@
+parameters:
+    database_host:     localhost
+    database_port:     ~
+    database_name:     XXXXX
+    database_user:     XXXXX
+    database_password: XXXXX
+
+    mailer_delivery_address: XXXX
+
+    router.request_context.host: localhost
+    router.request_context.scheme: http
+    request_context.base_path: ""
+    request_context.base_url: ""
+
+    secret:            CHANGE_ME
+    mandrill_api_key: ASK_ME_TO_SIMON
+    kissmetrics_api_key: ~
+    google_analytics_account: ~

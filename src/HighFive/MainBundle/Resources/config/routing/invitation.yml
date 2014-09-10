@@ -1,0 +1,15 @@
+invitation_invite:
+    pattern:  /
+    defaults: { _controller: MainBundle:Invitation:invite }
+    options:
+        expose: true
+
+invitation_register:
+    pattern:  /signup/{token}
+    defaults: { _controller: MainBundle:Invitation:register }
+
+invitation_no_coworkers:
+    pattern:  /no-coworkers
+    defaults: { _controller: MainBundle:Invitation:invitationNoCoworkers }
+    options:
+        expose: true

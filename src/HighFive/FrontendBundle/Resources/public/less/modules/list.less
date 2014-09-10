@@ -1,0 +1,78 @@
+// ------------------------------
+// List Module
+// ------------------------------
+
+
+// Core
+// -------------------------
+.list {
+    list-style: none;
+    margin: 0;
+}
+
+
+// Messages
+// -------------------------
+.list.list-messages {
+    padding: 0 @normalFontSize 100px;
+}
+
+
+// Boards
+// -------------------------
+.list.list-board {
+    list-style: decimal;
+    padding: 0 @normalFontSize * 1.5;
+
+    > .list-board-user {
+        margin-bottom: 5px;
+        font-size: @normalFontSize;
+        line-height: @normalLineHeight;
+
+        > .list-board-user-avatar {
+            .border-radius(@avatarBorderRadius);
+            width: @avatarSizeSmall / 1.5;
+        }
+
+        > .list-board-data {
+            .text-overflow();
+            display: inline-block;
+            .ie7-inline-block();
+            vertical-align: middle;
+            width: 180px;
+        }
+
+        > .list-board-user-points {
+            .pull-right;
+            .clearfix();
+            font-weight: bold;
+        }
+    }
+}
+
+
+// Grids
+// -------------------------
+.list.list-grid {
+    .border-radius(10px);
+    border: 1px solid @gridBorderColor;
+
+    > .list-grid-row {
+        border-bottom: 1px solid @gridBorderColor;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        > .list-grid-cell {
+            border-right: 1px solid @gridBorderColor;
+            color: @contentColor;
+            padding: @normalFontSize * 2;
+            text-align: center;
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+}

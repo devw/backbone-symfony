@@ -1,0 +1,50 @@
+// ------------------------------
+// App Layout
+// ------------------------------
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: url("@{imgBodyBackground}") repeat scroll 0 0 @bodyBackgroundColor;
+}
+
+hr {
+    margin: 14px 0;
+}
+
+#container {
+    .box-shadow(@containerBoxShadow);
+    border: 1px solid @borderColor;
+    display: table;
+    margin: auto;
+    height: 100%;
+
+    > .container-row-header {
+        height: 50px;
+        width: 100%;
+    }
+
+    > .container-row {
+        display: table-row;
+        height: 100%;
+    }
+}
+
+#sidebar, #main {
+    display: table-cell;
+    vertical-align: top;
+}
+
+#sidebar {
+    background-color: @sidebarBackgroundColorFallback;
+    background-color: @sidebarBackgroundColor;
+    border-right: 1px solid @borderColor;
+    width: 300px;
+}
+
+#main {
+    background-color: @mainContentBackgroundColor;
+}

@@ -1,0 +1,35 @@
+{% block subject %}
+{% autoescape false %}
+    {{ 'mail.notification.reply.subject'|trans({'%name%': message.sender.firstName ~ ' ' ~ message.sender.lastName, }) }}
+{% endautoescape %}
+{% endblock %}
+
+{% block body_text %}
+{% autoescape false %}
+    {{ 'mail.notification.reply.content_txt'|trans({'%name%': message.sender.firstName ~ ' ' ~ message.sender.lastName}) }}
+
+    {{ message.message}}
+{% endautoescape %}
+{% endblock %}
+
+{% block body_html %}
+{% embed "MainBundle:Mail:layout.html.twig" %}
+
+    {% block content %}
+        <p>
+            <strong>{{ message.recipient.firstName }}</strong>,
+        </p>
+        {{ 'mail.notification.reply.content_html'|trans({'%name%': (message.sender.firstName ~ ' ' ~ message.sender.lastName)|trim})|markdown }}
+        <p class="reply-text">{{ message.message|nl2br }}</p>
+
+        <table width="100%">
+            <tr>
+                <td align="center">
+                    <a href="{{ url('frontend') }}" class="button-home">{{ 'mail.links.go_to_app'|trans }}</a>
+                </td>
+            </tr>
+        </table>
+    {% endblock %}
+
+{% endembed %}
+{% endblock %}

@@ -1,0 +1,135 @@
+{% block subject %}
+{% autoescape false %}
+    What happened this week in {{ organization.name }} on HighFive.
+{% endautoescape %}
+{% endblock %}
+
+{% block body_text %}
+{% autoescape false %}
+    {{ recipient.firstName }},
+    Here is what happens on HighFive
+
+    {% if board is not empty %}
+        HighFive board of the week:
+        {% for i,user in board %}
+            {{ i+1 }}. {{ user.firstName ~ ' ' ~ user.lastName }} {{ user.points }}
+        {% endfor %}
+        ---------------------------------------------------------------------------
+    {% endif %}
+
+
+    {% if top_messages is not empty %}
+        Top HighFives this week:
+        {% for message in top_messages %}
+            - {{ message.message }}
+        {% endfor %}
+    {% else %}
+        Howdy, there has not been any HighFive given this week at {{ organization.name }}. Fortunately the week is not over yet! :)
+    {% endif %}
+    ---------------------------------------------------------------------------
+
+    There must have been something worth giving a HighFive this week, right ?
+    Go to HighFive: {{ url('frontend') }}
+
+{% endautoescape %}
+{% endblock %}
+
+{% block body_html %}
+{% embed "MainBundle:Mail:layout.html.twig" %}
+
+    {% block content %}
+
+        <p>
+            <strong>{{ recipient.firstName }}</strong>,
+            <br />
+            Here is what happens on HighFive
+        </p>
+
+        {% if board is not empty %}
+            <h3 class="secondary">HighFive board of the month</h3>
+            <ol align="left" class="list-board">
+                {% for user in board %}
+                    <li>
+                        <img src="{{ get_avatar(user) }}" width="24" height="24" alt="" class="list-board-pic" />
+                        {{ user.firstName ~ ' ' ~ user.lastName }} (<strong>{{ user.points }}</strong>)
+                    </li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+
+        {% if top_messages is not empty %}
+            <h3 class="secondary">Top HighFives this week</h3>
+            <ul class="messages">
+                {% for message in top_messages %}
+                    <li class="list-highfive-item">
+                        <table>
+                            <tr>
+                                {# TODO handle the case of a message without sender (user joining) in a better way #}
+                                <td valign="top" width="50" align="center">
+                                    {% if message.sender is not null %}
+                                        <img src="{{ get_avatar(message.sender) }}" alt="" class="message-sender-avatar" />
+                                    {% elseif message.recipient is not null %}
+                                        <img src="{{ get_avatar(message.recipient) }}" alt="" class="message-sender-avatar" />
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <strong>
+                                                    {% if message.sender is not null %}
+                                                        {{ message.sender.firstName ~ ' ' ~ message.sender.lastName }}
+                                                        {% if message.recipient is not null and message.sender != message.recipient %}
+                                                            &rarr;
+                                                        {% endif %}
+                                                    {% endif %}
+                                                    {% if message.sender != message.recipient %}
+                                                        {{ message.recipient.firstName ~ ' ' ~ message.recipient.lastName }}
+                                                    {% endif %}
+                                                </strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                {{ message.message }}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                {% set repliers = [] %}
+                                                {% for reply in message.replies if reply.sender not in repliers %}
+                                                    {% set repliers = repliers|merge([reply.sender]) %}
+                                                    {% if loop.first %}
+                                                        <p class="message-repliers">People who participated to this thread:</p>
+                                                    {% endif %}
+                                                    <img src="{{ get_avatar(reply.sender) }}" alt="" class="reply-sender-avatar" title="{{ reply.sender.firstName ~ ' ' ~ reply.sender.lastName }}" />
+                                                {% endfor %}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Howdy, there has not been any HighFive given this week at {{ organization.name }}. Fortunately the week is not over yet! :)</p>
+        {% endif %}
+
+        <table width="100%">
+            <tr>
+                <td align="center">
+                    <p class="end-content">There must have been something worth giving a HighFive this week, right?</p>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <a href="{{ url('frontend') }}" class="button-home">Go to HighFive</a>
+                </td>
+            </tr>
+        </table>
+    {% endblock %}
+
+{% endembed %}
+{% endblock %}

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="high_five.tracking.listener" class="HighFive\MainBundle\EventListener\TrackingListener">
+            <tag name="kernel.event_subscriber" />
+            <argument type="service" id="high_five.tracking.tracker" />
+            <argument type="service" id="security.context" />
+        </service>
+
+        <service id="high_five.tracking.tracker" class="HighFive\MainBundle\Tracking\KissmetricsTracker" public="false">
+            <argument type="service" id="high_five.tracking.buzz" />
+            <argument>%kissmetrics_api_key%</argument>
+            <argument type="service" id="logger" on-invalid="ignore" />
+        </service>
+
+        <service id="high_five.tracking.buzz" class="Buzz\Browser" public="false">
+            <argument type="service" id="high_five.tracking.buzz.client" />
+            <argument type="service" id="high_five.tracking.buzz.message_factory" />
+        </service>
+
+        <service id="high_five.tracking.buzz.message_factory" class="Buzz\Message\Factory\Factory" public="false" />
+        <service id="high_five.tracking.buzz.client" class="Buzz\Client\Curl" public="false">
+            <call method="setVerifyPeer">
+                <argument>false</argument>
+            </call>
+        </service>
+    </services>
+
+</container>

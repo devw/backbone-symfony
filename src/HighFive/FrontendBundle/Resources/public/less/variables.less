@@ -1,0 +1,178 @@
+// ------------------------------
+// LESS Variables
+// ------------------------------
+
+
+// Grays
+// -------------------------
+@colorWhite:      #ffffff;
+@colorLightGray:  #efefee;
+@colorGray:       #cbcbcb;
+@colorDarkGray:   #5f5f5f;
+@colorDarkerGray: #333333;
+@colorLightBlack: #222222;
+@colorBlack:      #000000;
+
+
+
+// Main colors
+// -------------------------
+@colorBeige:  #ecece4;
+@colorBrown:  #946c1b;
+@colorBlue:   #57a5ac;
+@colorOrange: #f89835;
+@colorRed:    #e63030;
+
+
+
+// Typography
+// -------------------------
+@fontToLineHeightValue:   1.5; // This value allows getting the line height according to the font-size. Generally between 1.4 and 1.7
+
+
+// - Text Sizes
+@hugeFontSize:            50px;
+@hugeLineHeight:          round(@fontToLineHeightValue * @hugeFontSize);
+
+@biggerFontSize:          23px;
+@biggerLineHeight:        round(@fontToLineHeightValue * @bigFontSize);
+
+@bigFontSize:             20px;
+@bigLineHeight:           round(@fontToLineHeightValue * @bigFontSize);
+
+@highFontSize:            17px;
+@highLineHeight:          round(@fontToLineHeightValue * @highFontSize);
+
+@normalFontSize:          13px;
+@normalLineHeight:        round(@fontToLineHeightValue * @normalFontSize);
+
+@smallFontSize:           12px;
+@smallLineHeight:         round(@fontToLineHeightValue * @smallFontSize);
+
+@contentColor:            @colorDarkGray;
+@contentShadowColor:      0px 1px 0px @colorWhite;
+@informationContentColor: lighten(@colorDarkGray, 12%);
+
+
+
+// Layout
+// -------------------------
+
+// - Common
+@borderColor:                          @colorGray;
+@borderLightColor:                     @colorLightGray;
+@linksColor:                           @linkColor;
+@separatorColor:                       @colorBlue;
+@wallActionsAndMessageBackgroundColor: @colorLightGray;
+
+// - Showcase
+@showcaseBlocBackgroundColor:          @colorWhite;
+@showcaseHeaderBoxShadow:              0 2px 10px @colorDarkGray;
+@showcaseContainerShadow:              0 0 15px lighten(@colorDarkGray, 15%);
+
+// - Body
+@bodyBackgroundColor:                  lighten(@colorBeige, 5%);
+
+// - Main App - Container
+@containerBoxShadow:                   0px 0px 10px @colorGray;
+
+// - Main App - Sidebar
+@sidebarBackgroundColorFallback:       @colorBeige;
+@sidebarBackgroundColor:               rgba(227, 227, 218, .4);
+
+// - Main App - Content
+@mainContentBackgroundColor:           @colorWhite;
+
+// - Footer
+@footerBackgroundColor:                @colorWhite;
+
+
+
+// Avatars
+// -------------------------
+
+@avatarSizeMini:          16px;
+@avatarSizeSmall:         32px;
+@avatarSizeMedium:        64px;
+@avatarSizeBig:           128px;
+@avatarWallSize:          50px;
+
+@avatarBorderRadius:      3px;
+
+@avatarMixinDefaultColor: lighten(@colorDarkGray, 10%);
+
+
+
+// Modules
+// -------------------------
+
+// - Board
+@boardActiveUserColor:                     @infoText;
+
+// - Forms
+@ribbonTriangleColor:                      @colorDarkGray;
+@ribbonTriangleSize:                       29px;
+
+@errorColor: @colorRed;
+@errorBackgroundColor:                     lighten(@errorColor, 40%);
+@errorContentColor:                        darken(@errorColor, 20%);
+
+@formActionsBackgroundColor:               @wallActionsAndMessageBackgroundColor;
+@formCommentBackgroundColor:               @wallActionsAndMessageBackgroundColor;
+
+@formSignupGradientColor:                  @colorWhite;
+@formSignupBackgroundStartColor:           darken(@formSignupGradientColor, 5%);
+@formSignupBackgroundEndColor:             darken(@formSignupGradientColor, 10%);
+@formSignupContentColor:                   @contentColor;
+@formSignupTextShadow:                     none;
+
+@formModalContentMargin:                   @normalFontSize * 2;
+
+// - Grid list
+@gridBorderColor:                          lighten(@colorGray, 10%);
+
+// - Messages/Comments
+@messageBackgroundColor:                   @wallActionsAndMessageBackgroundColor;
+@messageCurrentUserBackgroundColor:        @infoBackground;
+
+// - Notifications
+@notificationMainColor:                    @colorBlue;
+@notificationLabelBackground:              transparent;
+@notificationItemBackgroundColorHovering:  lighten(@notificationMainColor, 45%);
+@notificationCloseHoveringBackgroundColor: lighten(@notificationMainColor, 20%);
+@notificationCloseHoveringColor:           @colorWhite;
+
+// - Widget
+@widgetTitleFontSize:                      @smallFontSize;
+@widgetTitleLineHeight:                    round(@fontToLineHeightValue * @widgetTitleFontSize);
+
+@widgetPointsButtonGradientColor:          @colorOrange;
+@widgetPointsButtonBorderColor:            darken(@widgetPointsButtonGradientColor, 30%);
+@widgetPointsButtonGradientStartColor:     lighten(@widgetPointsButtonGradientColor, 20%);
+@widgetPointsButtonGradientEndColor:       @widgetPointsButtonGradientColor;
+@widgetPointsButtonContentColor:           darken(@widgetPointsButtonGradientColor, 30%);
+@widgetPointsButtonTextShadowColor:        0px 1px 0px rgba(255, 255, 255, .5);
+
+@widgetLinksItemGradientStartColor:        lighten(@colorBeige, 5%);
+@widgetLinksItemGradientEndColor:          @colorBeige;
+@widgetLinksItemContentColor:              @contentColor;
+@widgetLinksItemTextShadowColor:           @contentShadowColor;
+
+
+
+// Components
+// -------------------------
+
+// - Navbar
+@topNavbarBackgroundStartColor:     @colorDarkerGray;
+@topNavbarBackgroundEndColor:       @colorLightBlack;
+@topNavbarColor:                    @colorWhite;
+@topNavbarTextShadow:               none;
+
+// - Buttons
+@buttonImportantGradientStartColor: @btnWarningBackground;
+@buttonImportantGradientEndColor:   @btnWarningBackgroundHighlight;
+@buttonImportantColor:              @colorWhite;
+@buttonImportantTextShadow:         none;
+
+@buttonActiveBoxShadow:             inset 0px 0px 5px rgba(0, 0, 0, .4);

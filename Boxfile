@@ -1,0 +1,53 @@
+web1:
+    shared_writable_dirs:
+        - app/cache
+        - app/logs
+        - app/sessions
+    document_root: web
+    default_gateway: app.php
+    index_list: [app.php]
+    php_version: 5.3.10
+    php_extensions:
+        - mbstring
+        - apc
+        - intl
+        - curl
+        - zip
+        - pdo_mysql
+        - xsl
+    php_session_autostart: Off
+    php_short_open_tag: Off
+    magic_quotes_gpc: Off
+    php_date_timezone: UTC
+    after_build:
+        - "curl -s http://getcomposer.org/installer | php -- --quiet; php composer.phar install -n"
+        - "php app/console --env=prod --no-debug assetic:dump -n"
+    before_deploy:
+        - "rm -rf app/cache/prod/appProdProjectContainer.*" # remove the cached container by hand to avoid issues when deleting a listener
+        - "php app/console --env=prod --no-debug cache:clear --no-warmup"
+        - "php app/console --env=prod --no-debug cache:warmup"
+        - "php app/console --env=prod --no-debug doctrine:migrations:migrate -n"
+        - "php app/console --env=prod --no-debug highfive:check-consistency -n"
+    cron:
+        - "0 0 1 * *": "php app/console --env=prod --no-debug highfive:reset-points -n -q"
+        - "0 0 * * 5": "php app/console --env=prod --no-debug highfive:send-summary -n -q" # once a week, midnight on Friday
+
+db1:
+    type: mysql
+
+global:
+    env:
+        - AM__DELIVERY_ADDRESS: "null"
+        - AM__KISSMETRICS_KEY: "null"
+        - AM__GOOGLE_ANALYTICS_ACCOUNT: "null"
+        - AM__MANDRILL_KEY: "null"
+        - AM__SECRET: fjaefeajzlfu4R4E9jllemz
+        - AM__DB_HOST: locahost
+        - AM__DB_PORT: "null"
+        - AM__DB_USER: "null"
+        - AM__DB_NAME: "null"
+        - AM__DB_PASSWORD: "null"
+        - AM__REQUEST_CONTEXT_HOST: "localhost"
+        - AM__REQUEST_CONTEXT_SCHEME: "https"
+        - AM__REQUEST_CONTEXT_BASE_PATH: ""
+        - AM__REQUEST_CONTEXT_BASE_URL: ""

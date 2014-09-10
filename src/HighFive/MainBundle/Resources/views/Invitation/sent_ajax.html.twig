@@ -1,0 +1,34 @@
+<div class="modal-header">
+    <button type="button" class="close" data-tid="cancel">×</button>
+    <h3>{{ 'invitation.title.invite'|trans }}</h3>
+</div>
+
+<div class="modal-body">
+    {% if sent_emails is not empty %}
+        <p>
+            {{ 'invitation.info.invites_sent'|trans }}
+            <strong>{{ sent_emails|join(', ') }}</strong>
+        </p>
+    {% endif %}
+
+    {% if resent_emails is not empty %}
+        <p>
+            {{ 'invitation.info.invites_resent'|trans }}
+            <strong>{{ resent_emails|join(', ') }}</strong>
+        </p>
+    {% endif %}
+
+    {% if registered_emails is not empty %}
+        <p>
+            {{ 'invitation.info.emails_registered'|trans }}
+            <strong>{{ registered_emails|join(', ') }}</strong>
+        </p>
+    {% endif %}
+
+    {% if invited_emails is not empty %}
+        <p>
+            {{ 'invitation.info.emails_invited'|trans }}
+            <strong>{{ invited_emails|join(', ') }}</strong>
+        </p>
+    {% endif %}
+</div>

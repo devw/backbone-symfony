@@ -1,0 +1,64 @@
+<div class="message-data">
+    <div class="message-sender">
+        {{#if message.sender_user}}
+            <img src="{{ message.sender_user.avatar_url }}" alt="" class="message-sender-avatar" />
+        {{else}}
+            <img src="{{ message.recipient_user.avatar_url }}" alt="" class="message-sender-avatar" />
+        {{/if}}
+        {{#if has_recognition}}
+            <p class="message-points label label-info">+{{ message.recognition.points }}</p>
+        {{/if}}
+    </div>
+    <div class="message-container">
+        <h5 class="message-title">
+            {{#if message.sender_user}}
+                {{ sender_name }}
+                {{#unless recipient_is_sender}}
+                    &rarr;
+                    {{#if recipient_is_current_user}}
+                        {{ trans "message.info.to_you" }}
+                    {{else}}
+                        <img src="{{ message.recipient_user.avatar_url }}" alt="" class="message-recipient-avatar" />
+                        {{ recipient_name }}
+                    {{/if}}
+                {{/unless}}
+            {{else}}
+                {{ recipient_name }}
+            {{/if}}
+        </h5>
+        <p class="message-content">{{nl2br message.message }}</p>
+        <div class="message-actions">
+            <time datetime="{{ message.created_at }}" class="message-time">{{ message.created_date_human_readable }}</time>
+            <ul class="list message-actions-links">
+                <li>
+                    · <a data-tid="show-comment">{{ trans "message.actions.reply" }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<ul class="list list-replies message-replies{{#unless has_replies}} hide{{/unless}}"></ul>
+
+<form class="form form-comment form-horizontal hide">
+    <div class="form-comment-content">
+        <textarea id="comment" name="message" class="form-comment-textarea" placeholder="{{ trans "wall.placeholder.enter_comment" }}" required></textarea>
+    </div>
+    {{#if can_give_points}}
+        <div class="control-group form-comment-points hide">
+            <label class="control-label" for="points-number">
+                {{ trans "recognition.label.points" }}
+                <span class="form-comment-points-counter">0</span>
+            </label>
+            <div class="controls">
+                <input id="points-number" data-tid="points-range" class="form-comment-range" type="range" name="points" min="0" max="{{ max_points }}" step="10" value="0" />
+            </div>
+        </div>
+    {{/if}}
+    <div class="form-comment-actions">
+        {{#if can_give_points}}
+            <a data-tid="add-points" class="form-comment-actions-points btn btn-link">{{ trans "wall.action.add_points" }}</a>
+        {{/if}}
+        <button type="submit" class="btn btn-primary" data-loading-text="{{ trans "layout.messages.loading" }}">{{ trans "wall.action.submit_comment" }}</button>
+    </div>
+</form>

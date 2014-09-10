@@ -1,0 +1,40 @@
+// ------------------------------
+// States Module
+// ------------------------------
+
+// Form
+// -------------------------
+.form.is-form-focused {
+
+    .form-feedback-textarea {
+        height: 200px;
+    }
+
+
+    .form-feedback-actions {
+        display: block;
+    }
+
+    .form-announcement-textarea {
+        height: 100px;
+        border-bottom: 0;
+    }
+
+    .form-announcement-actions {
+        border: 1px solid @borderColor;
+        border-top: 1px solid @borderLightColor;
+    }
+}
+
+// Active user in boards
+// -------------------------
+.list.list-board {
+    > .list-board-user {
+        > .list-board-data {
+            &.is-active-user {
+                color: @boardActiveUserColor;
+                font-weight: bold;
+            }
+        }
+    }
+}

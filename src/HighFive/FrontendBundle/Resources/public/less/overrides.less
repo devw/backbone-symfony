@@ -1,0 +1,33 @@
+// ------------------------------------------
+// Third party libraries overrides stylesheet
+// ------------------------------------------
+
+
+// Boostrap2
+// ------------------------------
+
+// Sprite icons path
+@iconSpritePath:         "../../img/glyphicons-halflings.png";
+@iconWhiteSpritePath:    "../../img/glyphicons-halflings-white.png";
+@imgBodyBackground:      "../../img/body-bg.png";
+@imgBannerBackground:    "../../img/banner.jpg";
+@hfIconSpritePath:       "../img/icons.png";
+@hfIconSpriteWhitePath:  "../img/icons_white.png";
+@hfSpritePath:           "../img/sprite.png";
+
+// This fixes the IE Bug related to the topbar which appears in blue on IE 8 (and maybe older ones)
+// The filter property was responsible of it with the color defined on 3 chars and not 6.
+.navbar-inner {
+    .gradientBar(@topNavbarBackgroundStartColor, @topNavbarBackgroundEndColor, @topNavbarColor, @topNavbarTextShadow);
+    padding-top: 3px;
+}
+
+.form {
+    .control-group {
+        .controls {
+            input, textarea {
+                .border-radius(0);
+            }
+        }
+    }
+}

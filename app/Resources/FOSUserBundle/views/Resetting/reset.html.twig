@@ -1,0 +1,26 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block content_title %}{{ 'invitation.title.invite'|trans }}{% endblock %}
+
+{% block content %}
+<div class="block block-showcase">
+    <h2 class="layout-title">{{ 'password_recovery.title'|trans }}</h2>
+</div>
+
+<hr class="layout-color-separator">
+
+<div class="block block-showcase">
+    <form action="{{ path('fos_user_resetting_reset', {'token': token}) }}" method="POST" class="form form-user-administration">
+        <div class="form-user-administration-content">
+            <p>{{ 'password_recovery.info.fill_in_new_password'|trans }}</p>
+            <hr>
+            {{ form_widget(form) }}
+        </div>
+
+        <div class="form-user-administration-actions">
+            <button class="btn form-user-administration-actions-submit" type="submit" data-tid="loading-button" data-loading-text="{{ 'layout.messages.loading'|trans }}" autocomplete="off">{{ 'password_recovery.action.update'|trans }}</button>
+            {{ 'registration.info.have_account'|trans }} <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

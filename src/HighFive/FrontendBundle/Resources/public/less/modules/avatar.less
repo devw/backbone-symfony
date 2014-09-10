@@ -1,0 +1,33 @@
+// ------------------------------
+// Avatar Module
+// ------------------------------
+
+// Core
+// -------------------------
+.avatar {
+    display: inline-block;
+    .ie7-inline-block();
+    margin: 0;
+
+    .avatar-picture {
+        .border-radius(@avatarBorderRadius);
+        width: @avatarSizeMedium;
+    }
+
+    .avatar-caption {
+        margin: 0;
+        overflow: hidden;
+        padding-left: @normalFontSize;
+        text-overflow: ellipsis;
+        text-shadow: @contentShadowColor;
+
+        > .avatar-caption-title {
+            .hyphens();
+            color: @contentColor;
+            font-size: @bigFontSize;
+            font-weight: bold;
+            line-height: @bigLineHeight;
+            margin-bottom: 0;
+        }
+    }
+}

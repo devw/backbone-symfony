@@ -1,0 +1,138 @@
+// ------------------------------
+// Widget Module
+// ------------------------------
+
+
+// Core
+// -------------------------
+.widget {
+
+    .widget-title {
+        font-size: @widgetTitleFontSize;
+        font-weight: bold;
+        line-height: @widgetTitleLineHeight;
+        margin-bottom: @normalFontSize;
+        text-shadow: @contentShadowColor;
+    }
+}
+
+
+// Profile Widget
+// -------------------------
+.widget.widget-profile {
+
+    > .widget-profile-avatar {
+        .clearfix();
+        display: block;
+        margin: @normalFontSize * 2;
+    }
+
+    > .widget-points-status {
+        .clearfix();
+        border-top: 1px solid @borderColor;
+        border-bottom: 1px solid @borderColor;
+        list-style: none;
+        margin: 0;
+
+        > li {
+            border-right: 1px solid @borderColor;
+            color: @contentColor;
+            float: left;
+            font-size: @smallFontSize;
+            line-height: @smallLineHeight;
+            text-align: center;
+            padding: 6px 10px;
+
+            &:last-child {
+                border-right: none;
+            }
+
+            > strong {
+                display: block;
+                font-size: @highFontSize;
+                line-height: @highLineHeight;
+            }
+        }
+    }
+}
+
+
+// Points Widget
+// -------------------------
+.widget.widget-points {
+    padding: @normalFontSize;
+    border-bottom: 1px solid @borderColor;
+
+    > .widget-points-content {
+        margin-bottom: 20px;
+        text-align: center;
+        color: @contentColor;
+        font-size: @hugeFontSize;
+        font-weight: bold;
+        line-height: @hugeLineHeight;
+        text-shadow: @contentShadowColor;
+    }
+
+    > .widget-points-actions {
+        text-align: center;
+
+        > .widget-points-button {
+            .box-shadow(~"inset 0px 3px 0px rgba(255, 255, 255, .4), inset 0px -2px 0px rgba(0, 0, 0, .1)");
+            .buttonBackground(@widgetPointsButtonGradientStartColor, @widgetPointsButtonGradientEndColor, @widgetPointsButtonContentColor, 0px 1px 0px rgba(255, 255, 255, .5));
+            border: 1px solid @widgetPointsButtonBorderColor;
+            font-size: @biggerFontSize;
+            font-weight: bold;
+            line-height: @biggerLineHeight;
+            padding: 10px 0;
+            width: 100%;
+
+            &:active {
+                .box-shadow(@buttonActiveBoxShadow);
+            }
+        }
+    }
+}
+
+
+// Board Widget
+// -------------------------
+.widget.widget-board {
+    margin-bottom: @normalFontSize * 2;
+    padding: 0 @normalFontSize;
+}
+
+
+// Feedback Widget
+// -------------------------
+.widget.widget-feedback {
+    margin-bottom: @normalFontSize;
+    padding: 0 @normalFontSize;
+}
+
+
+// Links Widget
+// -------------------------
+.widget.widget-links {
+
+    > .widget-links-item {
+        .gradientBar(@widgetLinksItemGradientStartColor, @widgetLinksItemGradientEndColor, @widgetLinksItemContentColor, @widgetLinksItemTextShadowColor);
+        display: block;
+        border-top: 1px solid @borderColor;
+        cursor: pointer;
+        font-weight: bold;
+        padding: @normalFontSize;
+
+        &:hover {
+            .gradientBar(lighten(@colorBeige, 4%), darken(@colorBeige, 3%), @contentColor, @contentShadowColor);
+            text-decoration: none;
+        }
+
+        &:active {
+            .box-shadow(@buttonActiveBoxShadow);
+        }
+
+        &:last-child {
+            border-bottom: 1px solid @borderColor;
+        }
+    }
+}

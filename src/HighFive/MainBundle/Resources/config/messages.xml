@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="high_five.messages.manager" class="HighFive\MainBundle\Model\MessageManager">
+            <argument type="service" id="doctrine" />
+            <argument type="service" id="event_dispatcher" />
+        </service>
+
+        <service id="high_five.messages.listener" class="HighFive\MainBundle\EventListener\MessagesListener">
+            <tag name="kernel.event_subscriber" />
+            <argument type="service" id="doctrine" />
+            <argument type="service" id="translator" />
+        </service>
+
+        <service id="high_five.messages.form.announcement" class="HighFive\MainBundle\Form\Type\AnnouncementType">
+            <tag name="form.type" alias="announcement_api" />
+        </service>
+
+        <service id="high_five.messages.form.reply" class="HighFive\MainBundle\Form\Type\ReplyType">
+            <tag name="form.type" alias="reply_api" />
+        </service>
+    </services>
+
+</container>

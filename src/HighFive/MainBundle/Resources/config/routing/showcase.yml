@@ -1,0 +1,8 @@
+showcase_home:
+    pattern:  /
+    defaults: { _controller: MainBundle:Showcase:index }
+
+# without this route, Apache is crashing (some file length issue probably)
+# TODO: remove it when another route is added.
+showcase_bugfix:
+    pattern: /_bugfix

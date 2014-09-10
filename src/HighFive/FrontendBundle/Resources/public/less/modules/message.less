@@ -1,0 +1,120 @@
+// ------------------------------
+// Message module
+// ------------------------------
+
+
+// Core
+// -------------------------
+.message {
+    border-bottom: 1px solid @borderColor;
+    margin: 0 0 @normalFontSize;
+    text-shadow: @contentShadowColor;
+
+    > .message-data {
+        .clearfix();
+        padding-bottom: @normalFontSize;
+
+        > .message-sender {
+            float: left;
+            text-align: center;
+            width: 9%;
+
+            .message-sender-avatar {
+                .border-radius(@avatarBorderRadius);
+                border: 1px solid @borderColor;
+                height: @avatarWallSize;
+                width: @avatarWallSize;
+            }
+
+            > .message-points {
+                margin: 3px 0 0 1px;
+            }
+        }
+
+        > .message-container {
+            float: left;
+            padding-left: @normalFontSize;
+            width: 85%;
+
+            > .message-title {
+                .text-overflow();
+                color: @contentColor;
+                margin: 0;
+
+                > .message-recipient-avatar {
+                    .border-radius(@avatarBorderRadius);
+                    border: 1px solid @borderColor;
+                    height: @avatarSizeSmall;
+                    width: @avatarSizeSmall;
+                }
+            }
+
+            > .message-content {
+                color: @contentColor;
+                margin: 10px 0 0;
+            }
+
+            > .message-actions, > .message-content {
+                font-size: @smallFontSize;
+                line-height: @smallLineHeight;
+            }
+
+            > .message-actions {
+
+                > .message-time, > .message-actions-links {
+                    display: inline-block;
+                    .ie7-inline-block();
+                }
+
+                > .message-time {
+                    color: @informationContentColor;
+                }
+
+                > .message-actions-links{
+                    font-size: @smallFontSize;
+                    line-height: @smallLineHeight;
+
+                    > li {
+                        > a {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    > .message-replies {
+        > li:last-child {
+            margin-bottom: @normalFontSize;
+        }
+    }
+}
+
+
+// Message reply
+// -------------------------
+.message.message-reply {
+    .box-shadow(none);
+    background: @messageBackgroundColor;
+    border-bottom: none;
+    margin: 0 0 5px 65px;
+    padding-bottom: 0;
+
+    > .message-data {
+        padding: 7px;
+
+        > .message-sender {
+            > .message-points {
+                margin-right: -2px;
+            }
+        }
+    }
+}
+
+
+// Current user reply
+// -------------------------
+.message-reply.message-reply-own {
+    background-color: @messageCurrentUserBackgroundColor;
+}

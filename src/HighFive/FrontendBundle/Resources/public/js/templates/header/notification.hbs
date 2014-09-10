@@ -1,0 +1,6 @@
+{{#if sender_user.avatar_url}}
+    <img src="{{ sender_user.avatar_url }}" alt="" class="notification-sender-avatar" />
+{{/if}}
+<span class="notification-message">{{ translated_message }}</span>
+<span data-tid="read" class="notification-read">×</span>
+<!-- {{!TODO - Add moment.js as soon as we have the date inside the notification}}-->

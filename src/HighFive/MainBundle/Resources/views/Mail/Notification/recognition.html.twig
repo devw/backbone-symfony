@@ -1,0 +1,39 @@
+{% block subject %}
+{% autoescape false %}
+    {{ 'mail.notification.recognition.subject'|trans({'%name%': recognition.sender.firstName ~ ' ' ~ recognition.sender.lastName, }) }}
+{% endautoescape %}
+{% endblock %}
+
+{% block body_text %}
+{% autoescape false %}
+    {{ 'mail.notification.recognition.content_txt'|trans({
+        '%name%': recognition.sender.firstName ~ ' ' ~ recognition.sender.lastName,
+        '%points%': recognition.points
+    }) }}
+{% endautoescape %}
+{% endblock %}
+
+{% block body_html %}
+{% embed "MainBundle:Mail:layout.html.twig" %}
+
+    {% block content %}
+        <p>
+            <strong>{{ recognition.recipient.firstName }}</strong>,
+        </p>
+
+        {{ 'mail.notification.recognition.content_html'|trans({
+            '%name%': (recognition.sender.firstName ~ ' ' ~ recognition.sender.lastName)|trim,
+            '%points%': recognition.points
+        })|markdown }}
+
+        <table width="100%">
+            <tr>
+                <td align="center">
+                    <a href="{{ url('frontend') }}" class="button-home">{{ 'mail.links.go_to_app'|trans }}</a>
+                </td>
+            </tr>
+        </table>
+    {% endblock %}
+
+{% endembed %}
+{% endblock %}

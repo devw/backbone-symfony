@@ -1,0 +1,489 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fun",
+				"function"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/HighFive/FrontendBundle/Resources/public/js/utils/backendController.js",
+			"settings":
+			{
+				"buffer_size": 2740,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/HighFive/FrontendBundle/Resources/public/spec/models/message.spec.js",
+			"settings":
+			{
+				"buffer_size": 2242,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 16 files for \"spyOn\"\n\n/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/spec/views/header/notificationView.spec.js:\n    1: /*global require, define, describe, beforeEach, it, expect, sinon, spyOn*/\n    2  (function () {\n    3      'use strict';\n    .\n   40                  describe('When read button handler fired', function () {\n   41                      beforeEach(function () {\n   42:                         spyOn(NotificationView.prototype, 'closeNotification');\n   43                          this.view = new NotificationView({\n   44                              model: new Backbone.Model(this.fixture.response.notifications[0])\n\n/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/spec/views/main/wallView.spec.js:\n   42              describe('When Post Update button handler fired', function () {\n   43                  beforeEach(function () {\n   44:                     spyOn(WallView.prototype, 'submitForm').andCallThrough();\n   45                      this.view = new WallView({\n   46                          el: $('<div><form class=\"form form-announcement\"><input type=\"submit\" /></form></div>')\n\n/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/spec/views/sidebar/feedbackView.spec.js:\n    1: /*global require, define, describe, beforeEach, it, expect, sinon, spyOn*/\n    2  (function () {\n    3      'use strict';\n    .\n   41                  describe('When Submit button handler fired', function () {\n   42                      beforeEach(function () {\n   43:                         spyOn(backendController, 'submitFeedback').andCallThrough();\n   44                          this.view = new FeedbackView({\n   45                              el: $('<div><form><input type=\"submit\" value=\"Submit\" /></form></div>')\n\n/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/spec/views/sidebar/recognizeView.spec.js:\n    1: /*global require, define, describe, beforeEach, it, expect, spyOn*/\n    2  (function () {\n    3      'use strict';\n    .\n   45                  describe('When HighFive button handler fired', function () {\n   46                      beforeEach(function () {\n   47:                         spyOn(backendController, 'submitRecognition').andCallThrough();\n   48                          this.view = new RecognizeView({\n   49                              el: $('<div><form><input type=\"submit\" value=\"Submit\" /></form></div>')\n\n7 matches across 4 files\n\n\nSearching 49 files for \"toHaveClass\"\n\n0 matches across 0 files\n\n\nSearching 175 files for \"jasmineJquery\"\n\n/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/spec/app.js:\n    5          'jasmine',\n    6          'jasmineHtml',\n    7:         'jasmineJquery',\n    8          'handlebars',\n    9          './views/header.spec',\n\n1 match in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 2916,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "src/HighFive/FrontendBundle/Resources/public/spec/views/header/notificationView.spec.js",
+			"settings":
+			{
+				"buffer_size": 2274,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/HighFive/FrontendBundle/Resources/public/spec/app.js",
+			"settings":
+			{
+				"buffer_size": 1444,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/HighFive/FrontendBundle/Resources/public/spec/views/main/wallView.spec.js",
+			"settings":
+			{
+				"buffer_size": 2036,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/collections/messages.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/models/message.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/utils/backendRouter.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/views/sidebar/recognizeView.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/spec/app.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/utils/poller.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/utils/dateFormatter.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/utils/backendForm.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/utils/tour.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/utils/tracker.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/main.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/views/header.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/utils/backendController.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/spec/views/header/notificationView.spec.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/views/sidebar/linksView.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/views/sidebar/inviteView.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/views/sidebar/feedbackView.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/achiveMonkey.sublime-project",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/models/notification.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/models/reply.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/models/user.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/app.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/collections/messagesReply.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/views/main/reply.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/views/main/wallView.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/collections/notifications.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/views/header/notificationView.js",
+		"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/views/main/messageView.js",
+		"/Users/antoniopierro/Sites/CoCoTask/cocotask.sublime-project",
+		"/Users/antoniopierro/Sites/Leemon/src/Incenteev/WebBundle/Resources/public/js/feedback.js",
+		"/Users/antoniopierro/Sites/Leemon/src/Incenteev/WebBundle/Resources/views/Contest/Main/show.html.twig",
+		"/Users/antoniopierro/Sites/Leemon/incenteev.sublime-project",
+		"/Users/antoniopierro/Sites/client/sharm/classes/Sharm.js",
+		"/Users/antoniopierro/Sites/client/apps/forum/models/Message.js",
+		"/Users/antoniopierro/Sites/client/apps/forum/views/MessageView.js",
+		"/Users/antoniopierro/Sites/client/apps/forum/views/ForumView.js",
+		"/Users/antoniopierro/Sites/client/appCompany/classes/Company.js",
+		"/Users/antoniopierro/Sites/client/appCompany/classes/CompanyAPI.js",
+		"/Users/antoniopierro/Sites/client/apps/forum/app.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public",
+			"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js",
+			"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/spec",
+			"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js",
+			"/Users/antoniopierro/Sites/AchieveMonkey/src/HighFive/FrontendBundle/Resources/public/js/views",
+			"/Users/antoniopierro/Sites/Leemon/src/Incenteev/WebBundle/Resources/public",
+			"/Users/antoniopierro/Sites/Leemon/src/Incenteev/WebBundle/Resources/views",
+			"/Users/antoniopierro/Sites/Leemon/src/Incenteev/WebBundle/Resources/public",
+			"/Users/antoniopierro/Sites/client"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"jasmineJquery",
+			"toHaveClass",
+			"spyOn",
+			"spy",
+			"bind",
+			"router",
+			"repl",
+			"serializeData",
+			"this.data('initialForm')",
+			"script",
+			"comment",
+			"messageElement",
+			"checkLink",
+			"author",
+			"apply",
+			"Querier.ap",
+			"Querier",
+			"limi"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/HighFive/FrontendBundle/Resources/public/js/utils/backendController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2740,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 80.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/HighFive/FrontendBundle/Resources/public/spec/models/message.spec.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								596,
+								598
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2916,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										236,
+										241
+									],
+									[
+										460,
+										465
+									],
+									[
+										962,
+										967
+									],
+									[
+										1395,
+										1400
+									],
+									[
+										1621,
+										1626
+									],
+									[
+										2047,
+										2052
+									],
+									[
+										2275,
+										2280
+									],
+									[
+										2814,
+										2827
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								2822,
+								2822
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 3,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 918.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/HighFive/FrontendBundle/Resources/public/spec/views/header/notificationView.spec.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2088,
+								2185
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 257.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/HighFive/FrontendBundle/Resources/public/spec/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1444,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								135,
+								148
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/HighFive/FrontendBundle/Resources/public/spec/views/main/wallView.spec.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2036,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1282,
+								1291
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"project": "achiveMonkey.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 223.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

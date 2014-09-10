@@ -1,0 +1,68 @@
+{% block subject %}
+{% autoescape false %}
+    {{ 'mail.presentation.subject'|trans }}
+{% endautoescape %}
+{% endblock %}
+
+{% block body_text %}
+{% autoescape false %}
+    {{ 'mail.presentation.introduction'|trans({'%first_name%': recipient.firstName}) }}
+
+    {{ 'mail.presentation.whats_next.title'|trans }}
+    ---------------------------------------------------------------------------
+    {{ 'mail.presentation.whats_next.title'|trans }}
+
+    >> {{ 'mail.presentation.invite_people.title'|trans }}
+    {{ 'mail.presentation.invite_people.content'|trans }}
+
+    >> {{ 'mail.presentation.recognize_people.title'|trans }}
+    {{ 'mail.presentation.recognize_people.content'|trans }}
+
+    {{ 'mail.presentation.why_highfive.title'|trans }}
+    ---------------------------------------------------------------------------
+    {{ 'mail.presentation.why_highfive.content'|trans }}
+    {{ 'mail.presentation.highfive_team'|trans }}
+{% endautoescape %}
+{% endblock %}
+
+{% block body_html %}
+{% embed "MainBundle:Mail:layout.html.twig" %}
+
+    {% block content %}
+        {{ 'mail.presentation.introduction'|trans({'%first_name%': recipient.firstName})|markdown }}
+
+        <h2 class="primary-title">{{ 'mail.presentation.whats_next'|trans }}</h2>
+
+        <table class="presentation-table">
+            <tr>
+                <td class="presentation-content presentation-content-left">
+                    <h3 class="presentation-title">{{ 'mail.presentation.invite_people.title'|trans }}</h3>
+                    <p>{{ 'mail.presentation.invite_people.content'|trans|nl2br }}</p>
+                </td>
+                <td>
+                    <div class="presentation-picture picture-invitation"></div>
+                </td>
+            </tr>
+        </table>
+
+        <table class="presentation-table">
+            <tr>
+                <td>
+                    <div class="presentation-picture picture-highfive"></div>
+                </td>
+                <td class="presentation-content presentation-content-right">
+                    <h3 class="presentation-title">{{ 'mail.presentation.recognize_people.title'|trans }}</h3>
+                    <p>{{ 'mail.presentation.recognize_people.content'|trans }}</p>
+                </td>
+            </tr>
+        </table>
+
+        <h2 class="primary-title">{{ 'mail.presentation.why_highfive.title'|trans }}</h2>
+
+        {{ 'mail.presentation.why_highfive.content'|trans|markdown }}
+        <p><strong>{{ 'mail.presentation.highfive_team'|trans }}</strong></p>
+
+    {% endblock %}
+
+{% endembed %}
+{% endblock %}

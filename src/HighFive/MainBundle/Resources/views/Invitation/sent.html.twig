@@ -1,0 +1,46 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block content %}
+<div class="block block-showcase">
+    <h2 class="layout-title">{{ 'invitation.title.invite'|trans }}</h2>
+</div>
+
+<hr class="layout-color-separator">
+
+<div class="block block-showcase">
+
+    {% if sent_emails is not empty %}
+        <p>
+            {{ 'invitation.info.invites_sent'|trans }}
+            <strong>{{ sent_emails|join(', ') }}</strong>
+        </p>
+    {% endif %}
+
+    {% if resent_emails is not empty %}
+        <p>
+            {{ 'invitation.info.invites_resent'|trans }}
+            <strong>{{ resent_emails|join(', ') }}</strong>
+        </p>
+    {% endif %}
+
+    {% if registered_emails is not empty %}
+        <p>
+            {{ 'invitation.info.emails_registered'|trans }}
+            <strong>{{ registered_emails|join(', ') }}</strong>
+        </p>
+    {% endif %}
+
+    {% if invited_emails is not empty %}
+        <p>
+            {{ 'invitation.info.emails_invited'|trans }}
+            <strong>{{ invited_emails|join(', ') }}</strong>
+        </p>
+    {% endif %}
+
+    <hr>
+
+    <div class="layout-actions-right">
+        <a href="{{ path('frontend') }}" class="btn btn-warning">{{ 'invitation.action.go_to_app'|trans }}</a>
+    </div>
+</div>
+{% endblock %}

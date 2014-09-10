@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <!-- TODO Improve the way the sender is configured -->
+        <parameter key="high_five.notification.email.sender">notifications@high5now.com</parameter>
+    </parameters>
+
+    <services>
+        <service id="high_five.notification.listener.web" class="HighFive\MainBundle\EventListener\NotificationListener">
+            <tag name="kernel.event_subscriber" />
+            <argument type="service" id="high_five.notification.manager" />
+            <argument type="service" id="doctrine" />
+        </service>
+
+        <service id="high_five.notification.manager" class="HighFive\MainBundle\Notification\NotificationManager" public="false" />
+
+        <service id="high_five.notification.handler.web" class="HighFive\MainBundle\Notification\WebHandler" public="false">
+            <tag name="high_five.notification_handler" />
+            <argument type="service" id="doctrine" />
+        </service>
+
+        <service id="high_five.notification.handler.email" class="HighFive\MainBundle\Notification\EmailHandler" public="false">
+            <tag name="high_five.notification_handler" />
+            <argument type="service" id="high_five.mailer" />
+            <argument>%high_five.notification.email.sender%</argument>
+        </service>
+
+        <service id="high_five.notification.summary_sender" class="HighFive\MainBundle\Notification\SummarySender">
+            <argument type="service" id="high_five.mailer" />
+            <argument type="service" id="doctrine" />
+            <argument>%high_five.notification.email.sender%</argument>
+        </service>
+    </services>
+
+</container>

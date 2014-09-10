@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="high_five.invitation.resent_delay">86400</parameter><!-- 1 day -->
+    </parameters>
+
+    <services>
+        <service id="high_five.invitation.manager" class="HighFive\MainBundle\Model\InvitationManager">
+            <argument type="service" id="doctrine" />
+            <argument type="service" id="fos_user.user_manager" />
+            <argument type="service" id="high_five.mailer" />
+            <argument type="service" id="fos_user.util.token_generator" />
+            <argument type="service" id="event_dispatcher" />
+            <argument type="service" id="high_five.util.name_guesser" />
+            <argument>%high_five.invitation.resent_delay%</argument>
+        </service>
+
+        <service id="high_five.invitation.form.invitation" class="HighFive\MainBundle\Form\Type\InvitationType">
+            <tag name="form.type" alias="high_five_invitation" />
+        </service>
+
+        <service id="high_five.invitation.form.partial_registration" class="HighFive\MainBundle\Form\Type\PartialRegistrationType">
+            <tag name="form.type" alias="high_five_partial_registration" />
+            <argument type="service" id="high_five.form.listener.name_guesser" />
+        </service>
+    </services>
+
+</container>

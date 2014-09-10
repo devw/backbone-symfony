@@ -1,0 +1,18 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block content %}
+<div class="block block-showcase">
+    <h2 class="layout-title">{{ 'password_recovery.title'|trans }}</h2>
+</div>
+
+<hr class="layout-color-separator">
+
+<div class="block block-showcase">
+    {{ 'password_recovery.info.email_sent'|trans({'%email%': email})|markdown }}
+    <hr>
+    <div class="controls">
+        <i class="icon-circle-arrow-right"></i>
+        {{ 'registration.info.have_account'|trans }} <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+    </div>
+</div>
+{% endblock %}

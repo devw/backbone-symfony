@@ -1,0 +1,21 @@
+<!-- {{!TODO - Change Check name, (class name too?)}}-->
+<section class="message message-reply{{#if is_own_reply}} message-reply-own{{/if}}">
+    <div class="message-data">
+        <div class="message-sender">
+            <img src="{{ reply.sender_user.avatar_url }}" alt="" class="message-sender-avatar" />
+            {{#if has_recognition}}
+                <p class="message-points label label-info">+{{ reply.recognition.points }}</p>
+            {{/if}}
+        </div>
+
+        <div class="message-container">
+            <h5 class="message-title">{{ reply.sender_user.first_name }} {{ reply.sender_user.last_name }}</h5>
+            <div class="message-content">
+                {{nl2br reply.message }}
+            </div>
+            <div class="message-actions">
+                <time datetime="{{ reply.created_at }}" class="message-time">{{ reply.created_date_human_readable }}</time>
+            </div>
+        </div>
+    </div>
+</section>

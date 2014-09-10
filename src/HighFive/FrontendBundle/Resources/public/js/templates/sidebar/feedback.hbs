@@ -1,0 +1,11 @@
+<form class="form form-feedback form-vertical">
+    <div class="control-group">
+        <label class="control-label widget-title" for="feedback-message">{{ trans "feedback.title.feedback" }}</label>
+        <div class="controls">
+            <textarea id="feedback-message" class="form-feedback-textarea" data-tid="message" placeholder="{{ trans "feedback.placeholder.enter_comment" }}" required></textarea>
+        </div>
+    </div>
+    <div class="form-feedback-actions">
+        <button type="submit" class="btn btn-primary" data-loading-text="{{ trans "layout.messages.loading" }}">{{ trans "feedback.action.submit" }}</button>
+    </div>
+</form>

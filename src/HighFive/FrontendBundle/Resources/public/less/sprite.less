@@ -1,0 +1,46 @@
+// ------------------------------
+// Sprite
+// ------------------------------
+
+
+// Icons
+// ------------------------------
+[class^="hf-icon-"],
+[class*=" hf-icon-"] {
+    float: left;
+    .clearfix();
+    height: 26px;
+    width: 26px;
+    .ie7-restore-right-whitespace();
+    line-height: 26px;
+    vertical-align: text-top;
+    background-image: url("@{hfIconSpritePath}");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    margin: 0 10px;
+}
+
+.hf-icon-white {
+    background-image: url("@{hfIconSpriteWhitePath}");
+}
+
+.hf-icon-cup { background-position: 3px 0; }
+.hf-icon-wand { background-position: -23px 0; }
+.hf-icon-hand { background-position: -47px 0; }
+
+
+// Pictures, Logo
+// ------------------------------
+[class^="hf-sprite-"],
+[class*=" hf-sprite-"] {
+    display: block;
+    background-image: url("@{hfSpritePath}");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    height: 40px;
+}
+
+.hf-sprite-fun { background-position: 0 -13px; width: 38px; }
+.hf-sprite-engagement { background-position: 0 -60px; width: 28px; }
+.hf-sprite-teamwork { background-position: 0 -110px; width: 42px; }

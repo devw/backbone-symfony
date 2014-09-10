@@ -1,0 +1,38 @@
+<div class="modal-header">
+    <button type="button" class="close" data-tid="cancel">×</button>
+    <h4>{{ trans "recognition.title.recognize" }}</h4>
+</div>
+
+<form method="POST" class="form form-modal form-horizontal">
+    <div class="modal-body">
+        <div class="control-group">
+            <label for="name" class="control-label">{{ trans "recognition.label.name" }}</label>
+            <div class="controls">
+                <select id="name" name="recipient_id" required="required" data-tid="recipient_id">
+                    <option value=""></option>
+                    {{#each users}}
+                        <option value="{{id}}">{{first_name}} {{last_name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="message" class="control-label">{{ trans "recognition.label.reason" }}</label>
+            <div class="controls">
+                <textarea id="message" name="message" required="required" /></textarea>
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="points" class="control-label">
+                {{ trans "recognition.label.points" }}
+                (<span class="form-comment-points-counter">0</span>)
+            </label>
+            <div class="controls">
+                <input data-tid="points-range" class="points-range" type="range" id="points" name="points" required="required" step="10" min="0" max="{{ max_points }}" value="0" />
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" data-loading-text="{{ trans "layout.messages.loading" }}">{{ trans "recognition.action.recognize" }}</button>
+    </div>
+</form>

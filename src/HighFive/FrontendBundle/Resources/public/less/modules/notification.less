@@ -1,0 +1,70 @@
+// ------------------------------
+// Notification module
+// ------------------------------
+
+.notification {
+    .notification-label {
+        padding: 5px 10px 7px;
+        background-color: @notificationLabelBackground;
+    }
+
+    > .notification-list {
+        max-height: 335px;
+        padding: 0;
+        overflow-x: hidden;
+
+        > .notification-item {
+            position: relative;
+            padding: @normalFontSize;
+            width: 300px;
+            border-bottom: 1px solid @borderColor;
+            color: @contentColor;
+
+            // The second child is selected because of the "No Notification" message that is hidden in the list.
+            &:nth-child(2) {
+                .border-top-radius(5px);
+            }
+
+            &:last-child {
+                .border-bottom-radius(5px);
+                border-bottom: none;
+            }
+
+            &:hover {
+                background-color: @notificationItemBackgroundColorHovering;
+
+                > .notification-read {
+                    display: inline;
+                }
+            }
+
+            > .notification-sender-avatar {
+                .border-radius(@avatarBorderRadius);
+                height: @avatarSizeSmall;
+                width: @avatarSizeSmall;
+                vertical-align: top;
+            }
+
+            > .notification-message {
+                display: inline-block;
+                .ie7-inline-block();
+                width: 250px;
+            }
+
+            > .notification-read {
+                .hide;
+                cursor: pointer;
+                padding: 0 5px 0 4px;
+                position: absolute;
+                right: @normalFontSize;
+                top: @normalFontSize;
+                vertical-align: middle;
+
+                &:hover {
+                    background-color: @notificationCloseHoveringBackgroundColor;
+                    color: @notificationCloseHoveringColor;
+                }
+            }
+        }
+    }
+}

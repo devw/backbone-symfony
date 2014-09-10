@@ -1,0 +1,47 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block content %}
+<header class="header block block-showcase">
+    <div class="header-content">
+        <h1 class="title">{{ 'showcase.title.main'|trans }}</h1>
+        <h2 class="placeholder">{{ 'showcase.title.placeholder'|trans }}</h2>
+    </div>
+</header>
+
+<div class="subcontent">
+    <form action="{{ path("fos_user_registration_register") }}" method="POST" class="form form-signup-inline">
+        <h4>{{ 'showcase.title.form_placeholder'|trans }}</h4>
+        {{ form_widget(form, {'attr': {'class': 'form-signup-inline-content'}}) }}
+        <button type="submit" class="btn btn-form-signup-inline-submit" data-loading-text="{{ 'layout.messages.loading'|trans }}" data-tid="loading-button">{{ 'showcase.action.sign_me_up'|trans }}</button>
+    </form>
+
+    <div class="block block-showcase">
+        <ul class="list list-grid">
+            <li class="row-fluid list-grid-row">
+                <article class="span4 list-grid-cell presentation">
+                    <span class="hf-sprite-teamwork"></span>
+                    <h4 class="presentation-title">{{ 'showcase.message.title.team'|trans }}</h4>
+                    <p class="presentation-content">{{ 'showcase.message.presentation.team'|trans }}</p>
+                </article>
+                <article class="span4 list-grid-cell presentation">
+                    <span class="hf-sprite-fun"></span>
+                    <h4 class="presentation-title">{{ 'showcase.message.title.fun'|trans }}</h4>
+                    <p class="presentation-content">{{ 'showcase.message.presentation.fun'|trans }}</p>
+                </article>
+                <article class="span4 list-grid-cell presentation">
+                    <span class="hf-sprite-engagement"></span>
+                    <h4 class="presentation-title">{{ 'showcase.message.title.engagement'|trans }}</h4>
+                    <p class="presentation-content">{{ 'showcase.message.presentation.engagement'|trans }}</p>
+                </article>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<footer class="footer block block-showcase">
+    <a class="widget-links-item" href="mailto:{{ highfive_support_mail }}">
+        {{ 'layout.actions.contact_support'|trans }}
+    </a>
+    <span class="pull-right">© HighFive 2012</span>
+</footer>
+{% endblock %}

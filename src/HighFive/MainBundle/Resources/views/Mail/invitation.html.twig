@@ -1,0 +1,41 @@
+{% block subject %}
+{% autoescape false %}
+    {{ 'mail.invitation.subject'|trans({'%name%': invitation.referrer.firstName ~ ' ' ~ invitation.referrer.lastName}) }}
+{% endautoescape %}
+{% endblock %}
+
+{% block body_text %}
+{% autoescape false %}
+    {{ 'mail.invitation.title'|trans }}
+
+    {{ 'mail.invitation.content_txt'|trans({
+        '%first_name%': name,
+        '%user_name%': invitation.referrer.firstName ~ ' ' ~ invitation.referrer.lastName,
+        '%organization_name%': invitation.organization.name
+    }) }}
+
+    {{ 'mail.invitation.join'|trans }}
+
+    {{ url('invitation_register', {'token': invitation.token}) }}
+{% endautoescape %}
+{% endblock %}
+
+{% block body_html %}
+{% embed "MainBundle:Mail:layout.html.twig" %}
+
+    {% block content %}
+        {{ 'mail.invitation.content_html'|trans({
+            '%first_name%': name,
+            '%user_name%': (invitation.referrer.firstName ~ ' ' ~ invitation.referrer.lastName)|trim,
+            '%organization_name%': invitation.organization.name
+        })|markdown }}
+        <p>{{ 'mail.invitation.join'|trans }}</p>
+        <p>
+            <a href="{{ url('invitation_register', {'token': invitation.token}) }}">
+                {{ url('invitation_register', {'token': invitation.token}) }}
+            </a>
+        </p>
+    {% endblock %}
+
+{% endembed %}
+{% endblock %}

@@ -1,0 +1,10 @@
+<form class="form form-announcement">
+    <div class="form-announcement-content">
+        <textarea id="announcement" class="form-announcement-textarea" data-tid="announcement" placeholder="{{ trans "wall.placeholder.enter_announcement" }}" required></textarea>
+    </div>
+    <div class="form-announcement-actions hide">
+        <button type="submit" class="btn btn-primary" data-loading-text="{{ trans "layout.messages.loading" }}">{{ trans "wall.action.submit_announcement" }}</button>
+    </div>
+</form>
+
+<ul class="list list-messages"></ul>

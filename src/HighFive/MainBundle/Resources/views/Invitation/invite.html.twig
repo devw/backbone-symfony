@@ -1,0 +1,52 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block content %}
+<div class="block block-showcase">
+    <h2 class="layout-title">{{ 'invitation.title.invite'|trans }}</h2>
+</div>
+
+<hr class="layout-color-separator">
+
+<div class="block block-showcase">
+    <form action="{{ path('invitation_invite') }}" {{ form_enctype(form) }} method="POST" class="form form-user-administration">
+        <div class="form-user-administration-content">
+            <p>{{ 'invitation.info.explanation'|trans }}</p>
+            <hr>
+
+            {% form_theme form 'MainBundle:Form:no_label.html.twig' %}
+            {{ form_widget(form) }}
+
+            <div class="control-group">
+                <div class="controls">
+                    <div class="form-help">
+                        <button class="btn btn-mini" data-tid="add">
+                            <i class="icon-plus-sign"></i>
+                            {{ 'invitation.action.add_row'|trans }}
+                        </button> -
+                        <a href="{{ path('frontend') }}" class="form-user-administration-skip-step">{{ 'invitation.action.skip_step'|trans }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-user-administration-actions">
+            <button type="submit" class="btn form-user-administration-actions-submit" data-tid="loading-button" data-loading-text="{{ 'layout.messages.loading'|trans }}">{{ 'invitation.action.submit'|trans }}</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        jQuery(function ($) {
+            $('body').on('click', '[data-tid="add"]', function (e) {
+                e.preventDefault();
+                var coll = $('[data-tid="emails"]');
+                var count = coll.children('.control-group').length;
+                var proto = coll.attr('data-prototype').replace(/__name__label__/g, count).replace(/__name__/g, count);
+                coll.append(proto);
+            });
+        });
+    </script>
+{% endblock %}

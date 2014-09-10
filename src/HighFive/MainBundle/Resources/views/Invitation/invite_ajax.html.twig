@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <button type="button" class="close" data-tid="cancel">×</button>
+    <h4>{{ 'invitation.title.invite'|trans }}</h4>
+</div>
+
+<form action="{{ path('invitation_invite') }}" {{ form_enctype(form) }} method="POST" class="form form-invitation form-modal">
+    <div class="modal-body">
+        {% form_theme form 'MainBundle:Form:no_label.html.twig' %}
+        {{ form_widget(form) }}
+        <div class="controls">
+            <div class="form-help">
+                <button class="btn btn-mini" data-tid="add">
+                    <i class="icon-plus-sign"></i>
+                    {{ 'invitation.action.add_row'|trans }}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn" data-tid="cancel">{{ 'invitation.action.cancel'|trans }}</button>
+        <button type="submit" class="btn btn-primary" data-loading-text="{{ 'layout.messages.loading'|trans }}">{{ 'invitation.action.submit'|trans }}</button>
+    </div>
+</form>

@@ -1,0 +1,81 @@
+{
+    "name": "logsafe/high-five",
+    "autoload": {
+        "psr-0": { "HighFive": "src/" }
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "tijsverkoyen/css-to-inline-styles",
+                "version": "dev-master",
+                "source": {
+                    "type": "git",
+                    "url": "git://github.com/tijsverkoyen/CssToInlineStyles.git",
+                    "reference": "132ba9737cbf15320c0f54cf27711ed12bcd9484"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/tijsverkoyen/CssToInlineStyles/zipball/132ba9737cbf15320c0f54cf27711ed12bcd9484",
+                    "reference": "132ba9737cbf15320c0f54cf27711ed12bcd9484"
+                },
+                "autoload": {
+                    "classmap": [
+                        "css_to_inline_styles.php"
+                    ]
+                }
+            }
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": "2.1.*",
+        "doctrine/orm": "2.3.*",
+        "doctrine/doctrine-bundle": "1.0.*",
+        "doctrine/doctrine-fixtures-bundle": "dev-master",
+        "doctrine/doctrine-migrations-bundle": "dev-master",
+        "friendsofsymfony/jsrouting-bundle": "dev-master",
+        "friendsofsymfony/rest-bundle": "0.9.*",
+        "friendsofsymfony/user-bundle": "2.0.*",
+        "fzaninotto/faker": "*",
+        "henrikbjorn/stampie-bundle": "dev-master",
+        "knplabs/knp-markdown-bundle": "dev-master",
+        "kriswallsmith/buzz": "dev-master",
+        "leafo/lessphp": "*",
+        "nelmio/api-doc-bundle": "2.0.*",
+        "nelmio/js-logger-bundle": "dev-master",
+        "stof/stampie-extra": "dev-master",
+        "symfony/assetic-bundle": "2.1.*",
+        "symfony/monolog-bundle": "2.1.*",
+        "sensio/distribution-bundle": "2.1.*",
+        "sensio/framework-extra-bundle": "2.1.*",
+        "sensio/generator-bundle": "2.1.*",
+        "tijsverkoyen/css-to-inline-styles": "dev-master",
+        "willdurand/expose-translation-bundle": "dev-master"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "HighFive\\Composer\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ],
+        "post-update-cmd": [
+            "HighFive\\Composer\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "symfony-assets-install": "symlink",
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web"
+    }
+}

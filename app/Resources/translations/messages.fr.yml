@@ -1,0 +1,269 @@
+layout:
+    tooltip:
+        home: Accueil
+    placeholder:
+        search: Rechercher
+    messages:
+        loading: Chargement...
+    actions:
+        contact_support: Contacter le support
+
+showcase:
+    title:
+        main: Motivez votre Équipe. Tous les jours.
+        placeholder: HighFive facilite la Reconnaissance du bon Travail dans votre Équipe.
+        form_placeholder: Inscrivez-vous gratuitement en 30 secondes. Pas de carte de crédit.
+    message:
+        presentation: HighFive est une plateforme vous permettant d'accroître l'engagement dans votre équipe en utilisant reconnaissances et accomplissements.
+        system: Nous utilisons de puissants méchanismes ludiques afin de motiver vos salariés et d'accroître leur motivation ainsi que leur engagement au travail.
+        title:
+            team: Qu'est-ce qu'HighFive ?
+            fun: Simple et Amusant
+            engagement: Ludique
+        presentation:
+            team: |
+                HighFive est une Plateforme de Motivation qui augmente facilement l'Engagement dans votre Équipe en
+                encourageant l'Accomplissement et la Reconnaissance.
+            fun: |
+                Nous croyons que la vie est trop courte pour s'ennuyer au travail. Et nous pensons que la Motivation
+                devrait être un sujet amusant. Alors nous concevons HighFive pour être Simple et Amusant.
+            engagement: |
+                Nous utilisons des mécanismes Ludiques puissants pour Engager vos Équipes et augmenter la Motivation
+                sur le Lieu de Travail.
+    action:
+        signup: S'inscrire
+        sign_me_up: S'inscrire
+        go_to_app: Aller sur HighFive
+
+password_recovery:
+    title: Mot de passe oublié
+    label:
+        email: E-mail
+    info:
+        fill_in_email: Entrez votre adresse e-mail, et nous vous enverrons un e-mail avec les instructions pour mettre à jour votre mot de passe.
+        fill_in_new_password: Définissez votre nouveau mot de passe ci-dessous.
+        email_sent: |
+            Un email avec les instructions pour retrouver votre mot de passe a été envoyé à **%email%**.
+
+            Si vous ne l'avez pas reçu dans quelques minutes, vérifiez votre dossier de spam.
+    action:
+        recover: Retrouver mon mot de passe
+        update: Mettre à jour mon mot de passe
+
+registration:
+    title:
+        register: S'inscrire
+        welcome: Bienvenue dans HighFive !
+        almost_done: Vous avez bientôt terminé !
+    info:
+        have_account: Déjà inscrit ?
+        confirmation_successful: Vous avez correctement activé votre compte ! Bienvenue à bord !
+        email_verification: |
+            Un **email** a été envoyé à **%email%** afin de vérifier votre adresse.
+
+            Veuillez consulter votre boîte de réception et cliquer sur le lien dans l'e-mail que nous venons de vous envoyer.
+
+            Vous serez alors en mesure de commencer à utiliser HighFive !
+        invitation: |
+            **%user_name%** vous a invité dans l'organisation %organization_name%.
+
+            Rejoignez vos collègues en remplissant le formulaire ci-dessous.
+    label:
+        full_name: Nom complet
+        organization: Organisation
+    placeholder:
+        organization_name: Entreprise, Association, Equipe, ou tout type d'organisation
+
+security:
+    title:
+        log_in: Connexion
+    label:
+        remember_me: Se souvenir de moi
+        email: Adresse e-mail
+        password: Mot de passe
+    placeholder:
+        enter_email: Entrez votre e-mail... Tout doucement...
+        enter_password: Regardez le Post-It sur votre écran...
+    action:
+        log_in: Connexion
+        log_out: Déconnexion
+        register: S'inscrire Maintenant !
+    info:
+        not_register: Pas encore de compte ?
+        forgot_password: Mot de passe oublié ?
+
+invitation:
+    title:
+        invite: Invitez vos collègues
+        register: S'inscrire
+    info:
+        invite_coworkers: Invitez vos collègues
+        explanation: Vous pouvez maintenant inviter vos collègues à vous rejoindre sur HighFive.
+        help: Note: Vous pouvez inviter plusieurs personnes en ajoutant un email par ligne.
+        invites_sent: Une invitation a été envoyée aux adresses mail suivantes :
+        invites_resent: Une invitation a été réenvoyée aux adresses mail suivantes :
+        emails_registered: Les adresses mail suivantes sont déjà enregistrées dans l'application :
+        emails_invited: Des invitations pour les adresses mail suivantes ont déjà été envoyées :
+        no_coworkers: |
+            Oh, il n'y a actuellement personne excepté vous dans votre organisation, et se féliciter soi-même n'est pas très utile!
+            Utilisez le formulaire ci-dessous pour inviter vos collègues afin de pouvoir les féliciter!
+    action:
+        invite: Inviter
+        cancel: Annuler
+        submit: Soumettre
+        skip_step: Ignorer cette étape
+        go_to_app: Aller sur HighFive
+        add_row: Ajouter un autre email
+    tour:
+        title: Invitez vos collègues
+        content: Vous pouvez inviter vos collègues à vous rejoindre sur HighFive.
+    placeholder:
+        email: Entrez l'adresse mail d'un collègue
+
+recognition:
+    title:
+       recognize: Envoyer un HighFive
+    label:
+        name: Qui ?
+        reason: Pourquoi ?
+        points: Combien ?
+    info:
+        no_user_found: Aucun utilisateur trouvé
+    placeholder:
+        enter_name: Tapez les premières lettres du destinataire du HighFive...
+        enter_reason1: |
+            Je voulais te remercier d'avoir réparé la machine à café hier. Grâce à toi j'ai pu prendre mon café ce matin
+            et je me suis senti tellement bien que j'ai travaillé deux fois plus dur pour boucler le projet. Nous
+            devrions pouvoir envoyer cette navette sur Mars demain normalement.
+        enter_reason2: |
+            Cher Chuck Norris,
+
+            Merci d'avoir sauvé le Monde une fois de plus hier. Tu es toujours là pour nous sortir des mauvais pas et
+            distribuer quelques coups de pieds aux mauvais garçons et je t'en suis reconnaissant. Grâce à toi le Monde
+            est nettement meilleur.
+        enter_reason3: |
+            Je n'ai d'autre mot que merci, et encore merci. Ta contribution au projet Superman a été plus que
+            préciseuse. J'apprécie tout particulièrement tes superpouvoirs grâce auxquels nous avons pu terminer le
+            projet en 2 semaines au lieu de 3 mois.
+        enter_reason4: |
+            Je voulais juste te remercier d'être à l'heure tous les matins. Ça peut sembler évident mais tu es pile à
+            l'heure chaque jour et ça me fait du bien de savoir que nous pourrons commencer notre réunion du matin à
+            l'heure.
+    action:
+        recognize: HighFive
+        recognize_someone: HighFive
+    tour:
+        recognize-title: Envoyer un HighFive
+        recognize-content: Vous pouvez commencer à engager votre équipe et de reconnaître le bon travail.
+    points:
+        balance: "%points% pt|%points% pts"
+
+mail:
+    invitation:
+        title: Invitation
+        subject: %name% vous a invité sur HighFive
+        content_txt: |
+            Bonjour %first_name%,
+
+            %user_name% vous a invité sur HighFive dans l'organisation %organization_name%.
+        content_html: |
+            Bonjour %first_name%,
+
+            **%user_name%** vous a invité sur HighFive dans l'organisation %organization_name%.
+        join: Utilisez ce lien pour rejoindre :
+    notification:
+        recognition:
+            title: %name% vous a accordé des points
+            subject: %name% vous a accordé des points
+            content_txt: %name% vous a accordé %points% points. Prenez un instant pour le remercier.
+            content_html: "**%name%** vous a accordé **%points%** points sur HighFive. Prenez un instant pour le remercier."
+        reply:
+            subject: %name% a répondu à votre message
+            content_txt: %name% a répondu à une dicussion vous concernant.
+            content_html: "**%name%** a répondu à une dicussion vous concernant."
+    presentation:
+        subject: Bienvenue sur HighFive ! Plus qu'une minute pour commencer à utiliser HighFive.
+        introduction: |
+            Bonjour %first_name%,
+
+            Merci de votre inscription sur HighFive. **Pour commencer à utiliser HighFive, il ne vous reste que deux étapes très simples**. Vous pourrez ensuite commencer à engager votre équipe, mettre en valeur et récompenser le bon travail.
+        whats_next: Et maintenant ?
+        invite_people:
+            title: 1. Invitez votre équipe
+            content: |
+                S'envoyer des HighFives à soi-même n'est pas très utile ! Vous devez inviter au moins quelques personnes de votre équipe pour pouvoir utiliser HighFive correctement et en retirer des bénéfices.
+        recognize_people:
+            title: 2. Envoyez des HighFives
+            content: |
+                Une fois que vos collègues ont rejoint votre organisation, vous pouvez leur envoyer des HighFives. Les HighFives sont de courts messages de reconnaissances, positifs, envoyés pour apprécier et mettre en valeur le bon travail ou les bonnes attitudes qui impactent positivement votre organisation.
+        why_highfive:
+            title: Qu'est-ce qu'un bon HighFive ?
+            content: |
+                Chez HighFive, nous pensons que les bons HighFives doivent être **sincères** et **spécifiques**. Ne dites pas aux gens qu'ils sont géniaux. Ils ne vous croiront sûrement pas.
+                Dites-leur que **VOUS** souhaitez les remercier pour une raison **TRÈS SPÉCIFIQUE**.
+
+                Il y a plein d'excellentes raisons d'envoyer un HighFive: un vendeur a dépassé ses objectifs, un développeur a corrigé un bug gênant, un nouveau venu a rejoint l'organisation, quelqu'un dans votre équipe est toujours à l'heure le matin...
+
+                N'oubliez pas d'apprécier les comportements exceptionnels et les bons comportements plus normaux. Aussi, n'oubliez pas de décrire les conséquences de ces comportements pour la société.
+
+                **Vous avez des questions, ou besoin d'aide pour commencer ? Répondez simplement à cet e-mail et nous serons ravis de vous aider !**
+
+                Merci,
+        highfive_team: L'équipe HighFive
+    resetting:
+        title: Bonjour **%username%**,
+        content_html: "Pour réinitialiser votre mot de passe, merci de vous rendre sur le lien suivant: [%confirmationUrl%](%confirmationUrl%)."
+    registration:
+        title: Bonjour **%username%**,
+        content_html: "Pour terminer l'activation de votre compte, merci de vous rendre sur le lien suivant : [%confirmationUrl%](%confirmationUrl%)."
+    links:
+        home: Home
+        go_to_app: Aller sur HighFive
+
+profile:
+    message:
+        points_to_give: "point à donner|points à donner"
+        given_points: "point donné|points donnés"
+        received_points: "point reçu|points reçus"
+
+feedback:
+    title:
+        feedback: Feedback
+    placeholder:
+        enter_comment: Que pouvons-nous faire pour vous rendre HighFive plus plaisant ?
+    message:
+        sent: Merci pour votre retour. Nous allons y répondre plus vite que la lumière.
+    action:
+        submit: Poster
+
+wall:
+    placeholder:
+        comment: Commenter
+        no_comment: Vous n'avez pas encore de messages.
+        enter_comment: Votre HighFive...
+        enter_announcement: Vous avez accompli quelque chose ? Parlez-en...
+
+    action:
+        add_points: Donner des points
+        comment: Commenter
+        cancel_comment: Annuler
+        submit_comment: HighFive
+        submit_announcement: Poster votre message
+
+message:
+    actions:
+        reply: Répondre
+        recognize: HighFive
+    info:
+        registration: %first_name% %last_name% a rejoint HighFive. Prenez un instant pour accueillir %first_name%.
+        to_you: Vous
+
+notification:
+    message:
+        replied: %first_name% %last_name% a répondu à une dicussion vous concernant
+        received_points: Vous avez reçu %points% points de la part de %first_name% %last_name%
+        no_notifications: Aucune notification
+
+board:
+    label:
+        monthly: Classement du mois

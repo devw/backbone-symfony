@@ -1,0 +1,9 @@
+registration:
+    full_name:
+        missing_words: The full name should contain at least 2 words.
+
+organization:
+    already_exists: This organization already exists.
+
+invitation:
+    invalid_email: '"{{ value }}" is not a valid email address.'

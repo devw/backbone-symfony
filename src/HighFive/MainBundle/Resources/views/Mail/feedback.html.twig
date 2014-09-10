@@ -1,0 +1,14 @@
+{% block subject %}
+{% autoescape false %}
+    {{ sender.firstName ~ ' ' ~ sender.lastName }} sent you some feedback!
+{% endautoescape %}
+{% endblock %}
+
+{% block body_text %}
+{% autoescape false %}
+Dear HighFive team,
+{{ sender.firstName ~ ' ' ~ sender.lastName }} sent you some feedback. Here is the message:
+
+{{ message }}
+{% endautoescape %}
+{% endblock %}

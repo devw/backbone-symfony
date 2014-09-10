@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <!-- TODO Improve the way the sender is configured -->
+        <parameter key="high_five.mailer.sender">support@high5now.com</parameter>
+        <parameter key="high_five.feedback.address">support@high5now.com</parameter>
+    </parameters>
+
+    <services>
+        <service id="high_five.mailer" class="HighFive\MainBundle\Mailer\Mailer">
+            <argument type="service" id="high_five.mailer.stampie.spool_mailer" />
+            <argument type="service" id="twig" />
+            <argument>%high_five.mailer.sender%</argument>
+            <argument type="service" id="high_five.mailer.style_inliner" />
+            <!-- inject the TwigEngine in a dummy way just to ensure that it gets initialized to add the "app" global variable -->
+            <argument type="service" id="templating.engine.twig" />
+        </service>
+
+        <service id="high_five.mailer.fos_user" class="HighFive\MainBundle\Mailer\FOSMailer" public="false">
+            <argument type="service" id="high_five.mailer" />
+            <argument type="service" id="router" />
+            <argument>%fos_user.registration.confirmation.template%</argument>
+            <argument>%fos_user.resetting.email.template%</argument>
+        </service>
+
+        <service id="high_five.mailer.buzz.message_factory" class="Buzz\Message\Factory\Factory" public="false" />
+        <service id="high_five.mailer.buzz.client" class="Buzz\Client\Curl" public="false">
+            <call method="setVerifyPeer">
+                <argument>false</argument>
+            </call>
+        </service>
+
+        <service id="buzz" class="Buzz\Browser" public="false">
+            <argument type="service" id="high_five.mailer.buzz.client" />
+            <argument type="service" id="high_five.mailer.buzz.message_factory" />
+        </service>
+
+        <service id="high_five.mailer.stampie.listener.logger" class="Stampie\Extra\EventListener\LoggerListener">
+            <tag name="monolog.logger" channel="stampie" />
+            <tag name="kernel.event_subscriber" />
+            <argument type="service" id="logger" on-invalid="ignore" />
+        </service>
+
+        <service id="high_five.mailer.listener.spool_mailer" class="HighFive\MainBundle\EventListener\SpoolMailerListener">
+            <tag name="monolog.logger" channel="stampie" />
+            <tag name="kernel.event_subscriber" />
+            <argument type="service" id="high_five.mailer.stampie.spool_mailer" />
+            <argument type="service" id="logger" on-invalid="ignore" />
+        </service>
+
+        <service id="high_five.mailer.stampie.spool_mailer" class="Stampie\Extra\SpoolMailer" public="false">
+            <argument type="service" id="hb_stampie.mailer" />
+        </service>
+
+        <service id="high_five.mailer.style_inliner" class="HighFive\MainBundle\Mailer\CssToInlineStylesInliner" public="false">
+            <argument>%kernel.charset%</argument>
+        </service>
+    </services>
+</container>

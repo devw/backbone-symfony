@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="high_five.util.default_base_url">%router.request_context.scheme%://%router.request_context.host%%request_context.base_path%</parameter>
+    </parameters>
+
+    <services>
+        <service id="high_five.util.base_url_resolver" class="HighFive\MainBundle\Util\BaseUrlResolver" public="false">
+            <argument type="service" id="service_container" />
+            <argument>%high_five.util.default_base_url%</argument>
+        </service>
+
+        <service id="high_five.util.name_guesser" class="HighFive\MainBundle\Util\NameGuesser" public="false" />
+    </services>
+</container>

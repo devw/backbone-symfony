@@ -1,0 +1,19 @@
+messages:
+    resource: HighFive\MainBundle\Controller\Api\MessagesController
+    type: rest
+    name_prefix: api_
+
+notifications:
+    resource: HighFive\MainBundle\Controller\Api\NotificationsController
+    type: rest
+    name_prefix: api_
+
+recognitions:
+    resource: HighFive\MainBundle\Controller\Api\RecognitionsController
+    type: rest
+    name_prefix: api_
+
+users:
+    resource: HighFive\MainBundle\Controller\Api\UsersController
+    type: rest
+    name_prefix: api_
